@@ -42,8 +42,30 @@ function eyelash_theme_setup()
         'primary' => __('プライマリメニュー', 'eyelash'),
         'footer' => __('フッターメニュー', 'eyelash'),
     ));
+
+    // ブログ用のカスタム画像サイズ
+    add_image_size('blog-thumbnail', 400, 300, true);
+    add_image_size('blog-single', 800, 450, true);
 }
 add_action('after_setup_theme', 'eyelash_theme_setup');
+
+/**
+ * 抜粋文字数の設定
+ */
+function eyelash_excerpt_length($length)
+{
+    return 80;
+}
+add_filter('excerpt_length', 'eyelash_excerpt_length');
+
+/**
+ * 抜粋の省略記号を変更
+ */
+function eyelash_excerpt_more($more)
+{
+    return '...';
+}
+add_filter('excerpt_more', 'eyelash_excerpt_more');
 
 /**
  * スタイルシートとスクリプトの読み込み
@@ -143,6 +165,10 @@ function eyelash_rewrite_rules()
     add_rewrite_rule('^access/?$', 'index.php?eyelash_page=access', 'top');
     add_rewrite_rule('^faq/?$', 'index.php?eyelash_page=faq', 'top');
     add_rewrite_rule('^info/?$', 'index.php?eyelash_page=info', 'top');
+
+    // ブログ一覧ページ
+    add_rewrite_rule('^blog/?$', 'index.php?eyelash_page=blog', 'top');
+    add_rewrite_rule('^blog/page/([0-9]+)/?$', 'index.php?eyelash_page=blog&paged=$matches[1]', 'top');
 }
 add_action('init', 'eyelash_rewrite_rules');
 
@@ -184,6 +210,19 @@ function eyelash_template_include($template)
             case 'care':
                 $care_id = get_query_var('care_id');
                 $file = $theme_path . '/care/' . sprintf('%02d', $care_id) . '.php';
+                break;
+            case 'blog':
+                // ブログ一覧用のクエリを設定
+                global $wp_query;
+                $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+                $args = array(
+                    'post_type' => 'post',
+                    'posts_per_page' => 9,
+                    'paged' => $paged,
+                    'post_status' => 'publish',
+                );
+                $wp_query = new WP_Query($args);
+                $file = $theme_path . '/archive.php';
                 break;
             default:
                 $file = null;

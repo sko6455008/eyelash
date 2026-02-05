@@ -15,6 +15,9 @@
             <li id="menu-item-1571" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1571">
                 <a href="<?php echo esc_url(home_url('/menu/')); ?>">メニュー<span class="sub-title"></span></a>
             </li>
+            <li id="menu-item-1572" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1572">
+                <a href="<?php echo esc_url(home_url('/blog/')); ?>">ブログ<span class="sub-title"></span></a>
+            </li>
             <li id="menu-item-1566" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1566">
                 <a href="<?php echo esc_url(home_url('/faq/')); ?>">FAQ<span class="sub-title"></span></a>
             </li>

@@ -112,6 +112,11 @@
                         <a title="メニュー" href="<?php echo esc_url(home_url('/menu/')); ?>">Menu<span
                                 class="sub-title">メニュー</span><span class="sub-menu-toggle"></span></a>
                     </li>
+                    <li id="menu-item-blog"
+                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-blog">
+                        <a href="<?php echo esc_url(home_url('/blog/')); ?>">Blog<span class="sub-title">ブログ</span><span
+                                class="sub-menu-toggle"></span></a>
+                    </li>
                     <li id="menu-item-1556"
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1556">
                         <a href="<?php echo esc_url(home_url('/faq/')); ?>">FAQ<span
