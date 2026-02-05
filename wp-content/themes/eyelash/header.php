@@ -43,7 +43,7 @@
                 </h1>
                 <p class="l-header__desc" style="display: none;">池袋駅西口3分 池袋マツエクなら美容所登録サロン MOLREVE ( モルレーヴ )</p>
                 <div class="l-header__contact" style="display: flex; align-items: center;">
-                    <a href="https://www.instagram.com/" class="p-header-sns" target="_blank"
+                    <a href="https://www.instagram.com/molreve_eyelash/" class="p-header-sns" target="_blank"
                         style="margin-right: 15px; color: #fff; font-size: 24px;"><i
                             class="fa-brands fa-instagram"></i></a>
                     <a href="https://071f0f.b-merit.jp/0344057222/web/" class="p-contact__appointment p-btn"
@@ -53,7 +53,7 @@
             <a href="<?php echo esc_url(home_url('/')); ?>" id="js-menu-btn" class="p-menu-btn c-menu-btn"></a>
             <nav id="js-global-nav" class="p-global-nav">
                 <div class="p-global-nav__header-actions">
-                    <a href="https://www.instagram.com/" class="p-global-nav__sns" target="_blank">
+                    <a href="https://www.instagram.com/molreve_eyelash/" class="p-global-nav__sns" target="_blank">
                         <i class="fa-brands fa-instagram"></i>
                     </a>
                     <a href="https://071f0f.b-merit.jp/0344057222/web/" class="p-global-nav__reservation-btn"
