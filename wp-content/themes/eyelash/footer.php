@@ -33,7 +33,7 @@
         <div class="l-footer__info-inner l-inner">
             <div class="l-footer__logo c-logo c-logo--retina">
                 <a href="<?php echo esc_url(home_url('/')); ?>">
-                    <img src="https://eyelash.jp/logo.png?2010160116">
+                    <img src="<?php echo esc_url(get_template_directory_uri()); ?>/logo.png">
                 </a>
             </div>
             <p class="l-footer__address p-address">〒170-0014　東京都豊島区池袋2-40-13　VORT Ⅰ池袋ビル6F <BR>

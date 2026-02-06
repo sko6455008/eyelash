@@ -37,8 +37,10 @@
             <div class="l-header__inner l-inner">
                 <h1 class="l-header__logo c-logo">
                     <a href="<?php echo esc_url(home_url('/')); ?>">
-                        <img src="https://eyelash.jp/logo.png" style="" class="pconly">
-                        <img src="https://eyelash.jp/logo.png" style="width: 85%;" class="sponly">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/logo.png" style=""
+                            class="pconly">
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/logo.png" style="width: 85%;"
+                            class="sponly">
                     </a>
                 </h1>
                 <p class="l-header__desc" style="display: none;">池袋駅西口3分 池袋マツエクなら美容所登録サロン MOLREVE ( モルレーヴ )</p>
