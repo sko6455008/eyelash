@@ -109,6 +109,33 @@
                             </li>
                         </ul>
                     </li>
+                    <?php
+                    // ギャラリーメインカテゴリーを動的に取得
+                    $gallery_main_categories = get_terms(array(
+                        'taxonomy' => 'gallery_main_category',
+                        'hide_empty' => false,
+                        'orderby' => 'name',
+                        'order' => 'ASC',
+                    ));
+                    $has_gallery_categories = !is_wp_error($gallery_main_categories) && !empty($gallery_main_categories);
+                    ?>
+                    <li id="menu-item-gallery"
+                        class="menu-item menu-item-type-custom menu-item-object-custom <?php echo $has_gallery_categories ? 'menu-item-has-children' : ''; ?> menu-item-gallery">
+                        <a href="<?php echo esc_url(home_url('/gallery/')); ?>">Gallery<span
+                                class="sub-title">ギャラリー</span><span class="sub-menu-toggle"></span></a>
+                        <?php if ($has_gallery_categories): ?>
+                            <ul class="sub-menu">
+                                <?php foreach ($gallery_main_categories as $gallery_cat): ?>
+                                    <li id="menu-item-gallery-<?php echo esc_attr($gallery_cat->slug); ?>"
+                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-gallery-<?php echo esc_attr($gallery_cat->slug); ?>">
+                                        <a href="<?php echo esc_url(home_url('/gallery/' . $gallery_cat->slug . '/')); ?>"><?php echo esc_html($gallery_cat->name); ?><span
+                                                class="sub-title"></span><span class="sub-menu-toggle"></span></a>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        <?php endif; ?>
+                    </li>
+
                     <li id="menu-item-1552"
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1552">
                         <a title="メニュー" href="<?php echo esc_url(home_url('/menu/')); ?>">Menu<span

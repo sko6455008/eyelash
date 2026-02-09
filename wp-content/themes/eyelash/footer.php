@@ -1,6 +1,6 @@
 <footer class="l-footer">
     <div class="menu-footer_menu-container">
-        <ul class="p-footer-nav">
+        <ul class="p-footer-nav" style="margin-top: 20px;">
             <li id="menu-item-1569"
                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-4 current_page_item menu-item-1569">
                 <a href="<?php echo esc_url(home_url('/')); ?>" aria-current="page">トップ<span
@@ -11,6 +11,10 @@
             </li>
             <li id="menu-item-1570" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1570">
                 <a href="<?php echo esc_url(home_url('/design/')); ?>">デザイン<span class="sub-title"></span></a>
+            </li>
+            <li id="menu-item-gallery"
+                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-gallery">
+                <a href="<?php echo esc_url(home_url('/gallery/')); ?>">ギャラリー<span class="sub-title"></span></a>
             </li>
             <li id="menu-item-1571" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1571">
                 <a href="<?php echo esc_url(home_url('/menu/')); ?>">メニュー<span class="sub-title"></span></a>

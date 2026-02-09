@@ -96,8 +96,8 @@ $theme_uri = get_template_directory_uri();
                 <section class="p-index-content">
                     <header class="p-index-content__header">
                         <h2 class="p-index-content__header-title"
-                            style="background: #111111; color: #ffffff; font-size: 34px;">Gallery<span
-                                style="color: #ffffff; font-size: 12px;">ギャラリー</span></h2>
+                            style="background: #111111; color: #ffffff; font-size: 34px;">Photo<span
+                                style="color: #ffffff; font-size: 12px;">写真</span></h2>
                         <p class="p-index-content__header-desc">細部まで徹底したモルレーヴのこだわりをご堪能ください。</p>
                     </header>
 
