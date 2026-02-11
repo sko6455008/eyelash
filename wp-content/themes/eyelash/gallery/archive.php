@@ -113,6 +113,7 @@ $gallery_query = new WP_Query(array(
                                 <div class="p-gallery-item__info">
                                     <h3 class="p-gallery-item__title"><?php the_title(); ?></h3>
                                 </div>
+                                <p class="publish" style="display:none;"><?php echo get_the_date('Y-m-d'); ?></p>
                             </article>
                         <?php endwhile; ?>
                     </div>
