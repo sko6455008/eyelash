@@ -43,13 +43,13 @@ $theme_uri = get_template_directory_uri();
       <div class="l-primary">
         <div class="p-post-list">
           <article class="p-post-list__item p-article01 u-clearfix">
-            <a href="<?php echo esc_url(home_url('/design/01.php')); ?>" class="p-article01__img p-hover-effect--type2">
+            <a href="<?php echo esc_url(home_url('/design/01/')); ?>" class="p-article01__img p-hover-effect--type2">
               <img width="510" height="" src="<?php echo esc_url($theme_uri); ?>/design/sam01.jpg" alt="Lカールシリーズのまつげエクステデザイン" />
             </a>
             <div class="p-article01__content">
               <h2 class="p-article01__title">
                 <a
-                  href="<?php echo esc_url(home_url('/design/01.php')); ?>">ビューラーで立ち上げた時のように、まつ毛の存在感が出てパッチリとしたお目元を演出できるカール。キレイなカールを維持することができます。「Lシリーズ」</a>
+                  href="<?php echo esc_url(home_url('/design/01/')); ?>">ビューラーで立ち上げた時のように、まつ毛の存在感が出てパッチリとしたお目元を演出できるカール。キレイなカールを維持することができます。「Lシリーズ」</a>
               </h2>
               <p class="p-article01__meta">
                 <time class="p-article01__date" datetime="2017-09-20">L curl-series</time>
@@ -57,13 +57,13 @@ $theme_uri = get_template_directory_uri();
             </div>
           </article>
           <article class="p-post-list__item p-article01 u-clearfix">
-            <a href="<?php echo esc_url(home_url('/design/02.php')); ?>" class="p-article01__img p-hover-effect--type2">
+            <a href="<?php echo esc_url(home_url('/design/02/')); ?>" class="p-article01__img p-hover-effect--type2">
               <img width="510" height="" src="<?php echo esc_url($theme_uri); ?>/design/page-vol01.jpg" alt="ボリュームラッシュのまつげエクステデザイン" />
             </a>
             <div class="p-article01__content">
               <h2 class="p-article01__title">
                 <a
-                  href="<?php echo esc_url(home_url('/design/02.php')); ?>">ボリュームへの悩みをダイレクトに解決。3Dボリュームラッシュでふわふわまつ毛に毛量が気になる方も、自然にボリュームアップ「ボリュームラッシュ」</a>
+                  href="<?php echo esc_url(home_url('/design/02/')); ?>">ボリュームへの悩みをダイレクトに解決。3Dボリュームラッシュでふわふわまつ毛に毛量が気になる方も、自然にボリュームアップ「ボリュームラッシュ」</a>
               </h2>
               <p class="p-article01__meta">
                 <time class="p-article01__date" datetime="2017-09-20">VOLUME LASH</time>
@@ -71,12 +71,12 @@ $theme_uri = get_template_directory_uri();
             </div>
           </article>
           <article class="p-post-list__item p-article01 u-clearfix">
-            <a href="<?php echo esc_url(home_url('/design/03.php')); ?>" class="p-article01__img p-hover-effect--type2">
+            <a href="<?php echo esc_url(home_url('/design/03/')); ?>" class="p-article01__img p-hover-effect--type2">
               <img width="510" height="" src="<?php echo esc_url($theme_uri); ?>/design/page-flatrash01.jpg" alt="フラットラッシュのまつげエクステデザイン" />
             </a>
             <div class="p-article01__content">
               <h2 class="p-article01__title">
-                <a href="<?php echo esc_url(home_url('/design/03.php')); ?>">「とにかく付け心地が軽い！」「仕上がりがナチュラル！」と、
+                <a href="<?php echo esc_url(home_url('/design/03/')); ?>">「とにかく付け心地が軽い！」「仕上がりがナチュラル！」と、
                   SNSでも見かけることの多い話題のアイテム。「フラットラッシュ」</a>
               </h2>
               <p class="p-article01__meta">
@@ -85,13 +85,13 @@ $theme_uri = get_template_directory_uri();
             </div>
           </article>
           <article class="p-post-list__item p-article01 u-clearfix">
-            <a href="<?php echo esc_url(home_url('/design/04.php')); ?>" class="p-article01__img p-hover-effect--type2">
+            <a href="<?php echo esc_url(home_url('/design/04/')); ?>" class="p-article01__img p-hover-effect--type2">
               <img width="510" height="" src="<?php echo esc_url($theme_uri); ?>/design/sam02.jpg" alt="最高級セーブルのまつげエクステデザイン" />
             </a>
             <div class="p-article01__content">
               <h2 class="p-article01__title">
                 <a
-                  href="<?php echo esc_url(home_url('/design/04.php')); ?>">まつげエクステを知り尽くしているからこそ誕生したゆずれない価値、こだわりの品質。ナチュラル（自然）な仕上がりをとことん追求。「セーブル」</a>
+                  href="<?php echo esc_url(home_url('/design/04/')); ?>">まつげエクステを知り尽くしているからこそ誕生したゆずれない価値、こだわりの品質。ナチュラル（自然）な仕上がりをとことん追求。「セーブル」</a>
               </h2>
               <p class="p-article01__meta">
                 <time class="p-article01__date" datetime="2017-09-20">Sable LASH</time>
@@ -99,13 +99,13 @@ $theme_uri = get_template_directory_uri();
             </div>
           </article>
           <article class="p-post-list__item p-article01 u-clearfix">
-            <a href="<?php echo esc_url(home_url('/design/05.php')); ?>" class="p-article01__img p-hover-effect--type2">
+            <a href="<?php echo esc_url(home_url('/design/05/')); ?>" class="p-article01__img p-hover-effect--type2">
               <img width="510" height="" src="<?php echo esc_url($theme_uri); ?>/design/page-rushlift01.jpg" alt="まつ毛パーマのデザイン" />
             </a>
             <div class="p-article01__content">
               <h2 class="p-article01__title">
                 <a
-                  href="<?php echo esc_url(home_url('/design/05.php')); ?>">「まつげエクステはしたくない」「メンテナンスがめんどくさい」というお客様へまつげエクステ以外の目元美への新提案。「まつ毛パーマ」</a>
+                  href="<?php echo esc_url(home_url('/design/05/')); ?>">「まつげエクステはしたくない」「メンテナンスがめんどくさい」というお客様へまつげエクステ以外の目元美への新提案。「まつ毛パーマ」</a>
               </h2>
               <p class="p-article01__meta">
                 <time class="p-article01__date" datetime="2017-09-20">Eyelash perm</time>
@@ -113,13 +113,13 @@ $theme_uri = get_template_directory_uri();
             </div>
           </article>
           <article class="p-post-list__item p-article01 u-clearfix">
-            <a href="<?php echo esc_url(home_url('/design/06.php')); ?>" class="p-article01__img p-hover-effect--type2">
+            <a href="<?php echo esc_url(home_url('/design/06/')); ?>" class="p-article01__img p-hover-effect--type2">
               <img width="510" height="" src="<?php echo esc_url($theme_uri); ?>/design/page-eyebrow01.jpg" alt="アイブロウスタイリングのデザイン" />
             </a>
             <div class="p-article01__content">
               <h2 class="p-article01__title">
                 <a
-                  href="<?php echo esc_url(home_url('/design/06.php')); ?>">「ノーメイクでも美しい」を実感!描かなくてもいいような自眉をいかした似合うカタチの提案や、描く場合のコツなどのアドバイスも「アイブロウスタイリング」</a>
+                  href="<?php echo esc_url(home_url('/design/06/')); ?>">「ノーメイクでも美しい」を実感!描かなくてもいいような自眉をいかした似合うカタチの提案や、描く場合のコツなどのアドバイスも「アイブロウスタイリング」</a>
               </h2>
               <p class="p-article01__meta">
                 <time class="p-article01__date" datetime="2017-09-20">Eyebrow</time>

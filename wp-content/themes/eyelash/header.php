@@ -80,32 +80,32 @@
                         <ul class="sub-menu">
                             <li id="menu-item-1936"
                                 class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1936">
-                                <a href="<?php echo esc_url(home_url('/design/01.php')); ?>">Lカール<span
+                                <a href="<?php echo esc_url(home_url('/design/01/')); ?>">Lカール<span
                                         class="sub-title"></span><span class="sub-menu-toggle"></span></a>
                             </li>
                             <li id="menu-item-1935"
                                 class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1935">
-                                <a href="<?php echo esc_url(home_url('/design/02.php')); ?>">ボリュームラッシュ<span
+                                <a href="<?php echo esc_url(home_url('/design/02/')); ?>">ボリュームラッシュ<span
                                         class="sub-title"></span><span class="sub-menu-toggle"></span></a>
                             </li>
                             <li id="menu-item-1934"
                                 class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1934">
-                                <a href="<?php echo esc_url(home_url('/design/03.php')); ?>">フラットラッシュ<span
+                                <a href="<?php echo esc_url(home_url('/design/03/')); ?>">フラットラッシュ<span
                                         class="sub-title"></span><span class="sub-menu-toggle"></span></a>
                             </li>
                             <li id="menu-item-1933"
                                 class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1933">
-                                <a href="<?php echo esc_url(home_url('/design/04.php')); ?>">最高級セーブル<span
+                                <a href="<?php echo esc_url(home_url('/design/04/')); ?>">最高級セーブル<span
                                         class="sub-title"></span><span class="sub-menu-toggle"></span></a>
                             </li>
                             <li id="menu-item-1932"
                                 class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1932">
-                                <a href="<?php echo esc_url(home_url('/design/05.php')); ?>">まつ毛パーマ<span
+                                <a href="<?php echo esc_url(home_url('/design/05/')); ?>">まつ毛パーマ<span
                                         class="sub-title"></span><span class="sub-menu-toggle"></span></a>
                             </li>
                             <li id="menu-item-1932"
                                 class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1932">
-                                <a href="<?php echo esc_url(home_url('/design/06.php')); ?>">アイブロウ<span
+                                <a href="<?php echo esc_url(home_url('/design/06/')); ?>">アイブロウ<span
                                         class="sub-title"></span><span class="sub-menu-toggle"></span></a>
                             </li>
                         </ul>

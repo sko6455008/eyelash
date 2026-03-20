@@ -516,6 +516,25 @@ function eyelash_template_include($template)
 add_filter('template_include', 'eyelash_template_include');
 
 /**
+ * .php付きURLからクリーンURLへ301リダイレクト
+ */
+function eyelash_redirect_php_urls()
+{
+    if (is_admin()) {
+        return;
+    }
+
+    $request_uri = $_SERVER['REQUEST_URI'];
+
+    // /design/01.php → /design/01/
+    if (preg_match('#^/(design|care|page)/([0-9]+)\.php$#', $request_uri, $matches)) {
+        wp_redirect(home_url('/' . $matches[1] . '/' . $matches[2] . '/'), 301);
+        exit;
+    }
+}
+add_action('template_redirect', 'eyelash_redirect_php_urls');
+
+/**
  * フラッシュリライトルール（テーマ有効化時）
  */
 add_action('after_switch_theme', 'eyelash_flush_rewrite_rules');
