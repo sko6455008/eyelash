@@ -3,29 +3,30 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="<?php echo esc_attr(get_bloginfo('description')); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>
-        <?php wp_title('|', true, 'right'); ?>
-        <?php bloginfo('name'); ?>
-    </title>
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="<?php echo esc_url(home_url('/')); ?>">
-    <meta property="og:title" content="<?php bloginfo('name'); ?>">
-    <meta property="og:description" content="<?php echo esc_attr(get_bloginfo('description')); ?>">
-    <meta property="og:site_name" content="<?php bloginfo('name'); ?>">
-    <meta property="og:image" content="https://eyelash.jp/wp-content/uploads/2017/12/sp_slide1.jpg">
-    <meta property="og:image:secure_url" content="https://eyelash.jp/wp-content/uploads/2017/12/sp_slide1.jpg">
-    <meta property="og:image:width" content="980">
-    <meta property="og:image:height" content="760">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@designplus1">
-    <meta name="twitter:creator" content="designplus1">
-    <meta name="twitter:title" content="<?php bloginfo('name'); ?>">
-    <meta property="twitter:description" content="<?php echo esc_attr(get_bloginfo('description')); ?>">
-    <meta name="twitter:image:src" content="https://eyelash.jp/wp-content/uploads/2017/12/sp_slide1-510x320.jpg">
     <link rel="shortcut icon" href="https://eyelash.jp/wp-content/uploads/2017/12/favicon.png">
     <?php wp_head(); ?>
+    <?php
+    /**
+     * タイトルタグ: Yoast SEO が wp_head() 内で出力（title-tag サポート有効）
+     * meta description: Yoast SEO が wp_head() 内で出力
+     * OGP / Twitter Card: Yoast SEO が wp_head() 内で出力
+     *
+     * カスタムリライトルールのページ（/info/, /design/, /menu/ 等）は
+     * Yoast が認識できないため、テーマ側でフォールバック出力する
+     */
+    $eyelash_page = get_query_var('eyelash_page');
+    if ($eyelash_page) {
+        $seo_meta = eyelash_get_seo_meta();
+    ?>
+    <meta name="description" content="<?php echo esc_attr($seo_meta['description']); ?>">
+    <meta property="og:type" content="<?php echo esc_attr($seo_meta['og_type']); ?>">
+    <meta property="og:url" content="<?php echo esc_url($seo_meta['og_url']); ?>">
+    <meta property="og:title" content="<?php echo esc_attr($seo_meta['title']); ?>">
+    <meta property="og:description" content="<?php echo esc_attr($seo_meta['description']); ?>">
+    <meta property="og:site_name" content="<?php bloginfo('name'); ?>">
+    <meta property="og:image" content="https://eyelash.jp/wp-content/uploads/2017/12/sp_slide1.jpg">
+    <?php } ?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -35,14 +36,14 @@
 
         <header id="js-header" class="l-header">
             <div class="l-header__inner l-inner">
-                <h1 class="l-header__logo c-logo">
+                <div class="l-header__logo c-logo">
                     <a href="<?php echo esc_url(home_url('/')); ?>">
                         <img src="<?php echo esc_url(get_template_directory_uri()); ?>/logo.png" style=""
-                            class="pconly">
+                            class="pconly" alt="MOLREVE（モルレーヴ）池袋マツエクサロン">
                         <img src="<?php echo esc_url(get_template_directory_uri()); ?>/logo.png" style="width: 85%;"
-                            class="sponly">
+                            class="sponly" alt="MOLREVE（モルレーヴ）池袋マツエクサロン">
                     </a>
-                </h1>
+                </div>
                 <p class="l-header__desc" style="display: none;">池袋駅西口3分 池袋マツエクなら美容所登録サロン MOLREVE ( モルレーヴ )</p>
                 <div class="l-header__contact" style="display: flex; align-items: center;">
                     <a href="https://www.instagram.com/molreve_eyelash/" class="p-header-sns" target="_blank"

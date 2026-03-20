@@ -49,7 +49,7 @@ $theme_uri = get_template_directory_uri();
                   <div class="tcd-pb-col col1">
                     <div class="tcd-pb-widget widget1 pb-widget-editor">
                       <h3 class="pb_headline pb_font_family_type3">Eyelash perm<span>まつ毛パーマについて</span></h3>
-                      <p class="mb0"><img src="<?php echo esc_url($theme_uri); ?>/design/page-rushlift01.jpg?1229"></p>
+                      <p class="mb0"><img src="<?php echo esc_url($theme_uri); ?>/design/page-rushlift01.jpg?1229" alt="まつ毛パーマの仕上がりイメージ"></p>
                     </div>
                     <div class="tcd-pb-widget widget2 pb-widget-editor">
                       <h4>「まつげエクステはしたくない」<BR>「メンテナンスがめんどくさい」<BR>「ナチュラルメイクに合った目元が欲しい」<BR>というお客様へまつげエクステ以外の目元美への新提案。<BR>

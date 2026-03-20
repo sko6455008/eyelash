@@ -58,7 +58,7 @@ $gallery_query = new WP_Query(array(
                     <article class="p-post-list__item p-article01 u-clearfix">
                         <a href="<?php echo esc_url(home_url('/gallery/eyebrow/')); ?>"
                             class="p-article01__img p-hover-effect--type2">
-                            <img width="510" height="" src="<?php echo esc_url($theme_uri); ?>/gallery/01.jpg" />
+                            <img width="510" height="" src="<?php echo esc_url($theme_uri); ?>/gallery/01.jpg" alt="アイブロウギャラリー - 似合わせ眉デザイン" />
                         </a>
                         <div class="p-article01__content">
                             <h2 class="p-article01__title">
@@ -73,7 +73,7 @@ $gallery_query = new WP_Query(array(
                     <article class="p-post-list__item p-article01 u-clearfix">
                         <a href="<?php echo esc_url(home_url('/gallery/matsueku/')); ?>"
                             class="p-article01__img p-hover-effect--type2">
-                            <img width="510" height="" src="<?php echo esc_url($theme_uri); ?>/gallery/02.jpg" />
+                            <img width="510" height="" src="<?php echo esc_url($theme_uri); ?>/gallery/02.jpg" alt="マツエクギャラリー - まつげエクステデザイン" />
                         </a>
                         <div class="p-article01__content">
                             <h2 class="p-article01__title">
@@ -88,7 +88,7 @@ $gallery_query = new WP_Query(array(
                     <article class="p-post-list__item p-article01 u-clearfix">
                         <a href="<?php echo esc_url(home_url('/gallery/lashlift/')); ?>"
                             class="p-article01__img p-hover-effect--type2">
-                            <img width="510" height="" src="<?php echo esc_url($theme_uri); ?>/gallery/03.jpg" />
+                            <img width="510" height="" src="<?php echo esc_url($theme_uri); ?>/gallery/03.jpg" alt="ラッシュリフトギャラリー - まつ毛パーマデザイン" />
                         </a>
                         <div class="p-article01__content">
                             <h2 class="p-article01__title">

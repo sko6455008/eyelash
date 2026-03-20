@@ -44,7 +44,7 @@ $theme_uri = get_template_directory_uri();
         <div class="p-post-list">
           <article class="p-post-list__item p-article01 u-clearfix">
             <a href="<?php echo esc_url(home_url('/design/01.php')); ?>" class="p-article01__img p-hover-effect--type2">
-              <img width="510" height="" src="<?php echo esc_url($theme_uri); ?>/design/sam01.jpg" />
+              <img width="510" height="" src="<?php echo esc_url($theme_uri); ?>/design/sam01.jpg" alt="Lカールシリーズのまつげエクステデザイン" />
             </a>
             <div class="p-article01__content">
               <h2 class="p-article01__title">
@@ -58,7 +58,7 @@ $theme_uri = get_template_directory_uri();
           </article>
           <article class="p-post-list__item p-article01 u-clearfix">
             <a href="<?php echo esc_url(home_url('/design/02.php')); ?>" class="p-article01__img p-hover-effect--type2">
-              <img width="510" height="" src="<?php echo esc_url($theme_uri); ?>/design/page-vol01.jpg" />
+              <img width="510" height="" src="<?php echo esc_url($theme_uri); ?>/design/page-vol01.jpg" alt="ボリュームラッシュのまつげエクステデザイン" />
             </a>
             <div class="p-article01__content">
               <h2 class="p-article01__title">
@@ -72,7 +72,7 @@ $theme_uri = get_template_directory_uri();
           </article>
           <article class="p-post-list__item p-article01 u-clearfix">
             <a href="<?php echo esc_url(home_url('/design/03.php')); ?>" class="p-article01__img p-hover-effect--type2">
-              <img width="510" height="" src="<?php echo esc_url($theme_uri); ?>/design/page-flatrash01.jpg" />
+              <img width="510" height="" src="<?php echo esc_url($theme_uri); ?>/design/page-flatrash01.jpg" alt="フラットラッシュのまつげエクステデザイン" />
             </a>
             <div class="p-article01__content">
               <h2 class="p-article01__title">
@@ -86,7 +86,7 @@ $theme_uri = get_template_directory_uri();
           </article>
           <article class="p-post-list__item p-article01 u-clearfix">
             <a href="<?php echo esc_url(home_url('/design/04.php')); ?>" class="p-article01__img p-hover-effect--type2">
-              <img width="510" height="" src="<?php echo esc_url($theme_uri); ?>/design/sam02.jpg" />
+              <img width="510" height="" src="<?php echo esc_url($theme_uri); ?>/design/sam02.jpg" alt="最高級セーブルのまつげエクステデザイン" />
             </a>
             <div class="p-article01__content">
               <h2 class="p-article01__title">
@@ -100,7 +100,7 @@ $theme_uri = get_template_directory_uri();
           </article>
           <article class="p-post-list__item p-article01 u-clearfix">
             <a href="<?php echo esc_url(home_url('/design/05.php')); ?>" class="p-article01__img p-hover-effect--type2">
-              <img width="510" height="" src="<?php echo esc_url($theme_uri); ?>/design/page-rushlift01.jpg" />
+              <img width="510" height="" src="<?php echo esc_url($theme_uri); ?>/design/page-rushlift01.jpg" alt="まつ毛パーマのデザイン" />
             </a>
             <div class="p-article01__content">
               <h2 class="p-article01__title">
@@ -114,7 +114,7 @@ $theme_uri = get_template_directory_uri();
           </article>
           <article class="p-post-list__item p-article01 u-clearfix">
             <a href="<?php echo esc_url(home_url('/design/06.php')); ?>" class="p-article01__img p-hover-effect--type2">
-              <img width="510" height="" src="<?php echo esc_url($theme_uri); ?>/design/page-eyebrow01.jpg" />
+              <img width="510" height="" src="<?php echo esc_url($theme_uri); ?>/design/page-eyebrow01.jpg" alt="アイブロウスタイリングのデザイン" />
             </a>
             <div class="p-article01__content">
               <h2 class="p-article01__title">

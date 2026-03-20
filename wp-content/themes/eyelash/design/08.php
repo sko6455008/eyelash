@@ -55,12 +55,12 @@ $theme_uri = get_template_directory_uri();
                         ビューラーで立ち上げた時のように、まつ毛の存在感が出てパッチリとしたお目元を演出できるカール。<BR>根元がまっすぐなので、グルーと地まつ毛の接着面積が増え、まぶたの重みにも耐えることができるので、キレイなカールを維持することができます。<BR>他のカールと比較すると、接着面にあたる根元のストレート部分は約１mm。Lシリーズは約３倍の３mmになります!!
                         よって接着力UP。まぶたの厚みに押しつぶされないというメリットがあります。<BR>
                       <h3 class="pb_headline pb_font_family_type3">L curl-series style<span>Lシリーズの種類</span></h3>
-                      <p class="mb0"><img src="<?php echo esc_url($theme_uri); ?>/design/page-lseries01.png"><BR><BR>
+                      <p class="mb0"><img src="<?php echo esc_url($theme_uri); ?>/design/page-lseries01.png" alt="Lカールシリーズの種類一覧"><BR><BR>
                       </p>
                       <h3 class="pb_headline pb_font_family_type3">Recommended<span>こんな方へおすすめ</span></h3>
-                      <p class="mb0"><img src="<?php echo esc_url($theme_uri); ?>/design/page-lseries02.jpg"> <img
-                          src="<?php echo esc_url($theme_uri); ?>/design/page-lseries03.jpg"> <img
-                          src="<?php echo esc_url($theme_uri); ?>/design/page-lseries04.jpg"></p>
+                      <p class="mb0"><img src="<?php echo esc_url($theme_uri); ?>/design/page-lseries02.jpg" alt="Lカールおすすめポイント1"> <img
+                          src="<?php echo esc_url($theme_uri); ?>/design/page-lseries03.jpg" alt="Lカールおすすめポイント2"> <img
+                          src="<?php echo esc_url($theme_uri); ?>/design/page-lseries04.jpg" alt="Lカールおすすめポイント3"></p>
                       </p>
                     </div>
                   </div>

@@ -50,7 +50,7 @@ $theme_uri = get_template_directory_uri();
                     <div class="tcd-pb-widget widget1 pb-widget-headline">
                       <h3 class="pb_headline pb_font_family_type2">持ちを良くする独自の方法</h3>
                     </div>
-                    <img width="100%" height="*" src="<?php echo esc_url($theme_uri); ?>/care/lcurl0.png?21302" />
+                    <img width="100%" height="*" src="<?php echo esc_url($theme_uri); ?>/care/lcurl0.png?21302" alt="持ちを良くする独自の方法 - Lカールエクステ技術" />
                   </div>
                 </div>
               </div>
@@ -72,7 +72,7 @@ $theme_uri = get_template_directory_uri();
                   </div>
                   <div class="tcd-pb-col col2">
                     <div class="tcd-pb-widget widget1 pb-widget-editor">
-                      <img width="365" height="*" src="<?php echo esc_url($theme_uri); ?>/care/lcurl1_1.png?0226" />
+                      <img width="365" height="*" src="<?php echo esc_url($theme_uri); ?>/care/lcurl1_1.png?0226" alt="丁寧な前処理でまつげの汚れを除去" />
                     </div>
                   </div>
                 </div>
@@ -85,7 +85,7 @@ $theme_uri = get_template_directory_uri();
                     </div>
                     <div class="tcd-pb-widget widget2 pb-widget-editor">
                       <p>接着面積が少ないとまつエクが取れやすくなります。<br>
-                        面積が広いほど方向のバラつきもなく、持続力がUPします。<BR><img src="<?php echo esc_url($theme_uri); ?>/care/lcurl2_1.png">
+                        面積が広いほど方向のバラつきもなく、持続力がUPします。<BR><img src="<?php echo esc_url($theme_uri); ?>/care/lcurl2_1.png" alt="接着面積が広いほど持続力がアップする図解">
                       </p>
                     </div>
                   </div>
@@ -111,7 +111,7 @@ $theme_uri = get_template_directory_uri();
                   </div>
                   <div class="tcd-pb-col col2">
                     <div class="tcd-pb-widget widget1 pb-widget-editor">
-                      <img width="365" height="*" src="<?php echo esc_url($theme_uri); ?>/care/lcurl3_1.png" />
+                      <img width="365" height="*" src="<?php echo esc_url($theme_uri); ?>/care/lcurl3_1.png" alt="グルーの保管と量の調整" />
                     </div>
                   </div>
                 </div>
@@ -132,7 +132,7 @@ $theme_uri = get_template_directory_uri();
                             <th scope="col">上付け</th>
                           </tr>
                           <tr>
-                            <td><img src="<?php echo esc_url($theme_uri); ?>/care/lcurl4_1.png"><br>
+                            <td><img src="<?php echo esc_url($theme_uri); ?>/care/lcurl4_1.png" alt="上付け装着方法の図解"><br>
                               自まつ毛のカールがやや上向けの方や、緩やかなカーブの方は上に付ける装着方法で行います。★当店大人気の『L・LC・LD』カールも上付き♪
                               Lシリーズは特徴的な角度ですので、絡ませて装着してしまうと角がまつ毛に当たってしまい、取れやすくなってしまいます。
                               当店では、上付けでストレートラインを合わせしっかりと装着させます。</td>
@@ -146,7 +146,7 @@ $theme_uri = get_template_directory_uri();
                           </tr>
                           <tr>
                             <td>下向きのまつ毛の方で、CカールやDカールなどの角度があるエクステを合わせる場合、上付けですと絡まってしまい、取れやすい原因になります。
-                              当店では下から絡ませるように装着しております。<img src="<?php echo esc_url($theme_uri); ?>/care/lcurl4_2.png">
+                              当店では下から絡ませるように装着しております。<img src="<?php echo esc_url($theme_uri); ?>/care/lcurl4_2.png" alt="下付け装着方法の図解">
                             </td>
                           </tr>
                         </tbody>
@@ -158,7 +158,7 @@ $theme_uri = get_template_directory_uri();
                           </tr>
                           <tr>
                             <td>自まつ毛の流れに沿って装着すると、いろんな方向に向いてバラバラの仕上がりになってしまいます。 流れに左右されず装着方法をその都度変え、美しい形に仕上げます。<BR><img
-                                src="<?php echo esc_url($theme_uri); ?>/care/lcurl4_3.png"></td>
+                                src="<?php echo esc_url($theme_uri); ?>/care/lcurl4_3.png" alt="美しい扇型の仕上がりイメージ"></td>
                           </tr>
                         </tbody>
                       </table>

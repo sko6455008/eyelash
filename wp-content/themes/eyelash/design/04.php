@@ -49,7 +49,7 @@ $theme_uri = get_template_directory_uri();
                   <div class="tcd-pb-col col1">
                     <div class="tcd-pb-widget widget1 pb-widget-editor">
                       <h3 class="pb_headline pb_font_family_type3">Luxury Sable LASH<span>最高級セーブルラッシュについて</span></h3>
-                      <p class="mb0"><img src="<?php echo esc_url($theme_uri); ?>/design/page-seble01.jpg"></p>
+                      <p class="mb0"><img src="<?php echo esc_url($theme_uri); ?>/design/page-seble01.jpg" alt="最高級セーブルラッシュの仕上がりイメージ"></p>
                     </div>
                     <div class="tcd-pb-widget widget2 pb-widget-editor">
                       <h4>世界で初めてまつげエクステンションシートの特許を取得、まつげエクステを知り尽くしているからこそ誕生できた、こだわりの最高級品質のものを使用しております</h4>

@@ -10,6 +10,7 @@ $theme_uri = get_template_directory_uri();
 ?>
 
 <main class="l-main">
+    <h1 class="p-front-hero__title">池袋駅西口3分 まつげエクステ・マツエクサロン MOLREVE（モルレーヴ）</h1>
     <div class="p-header-content">
         <div id="js-header-slider" class="p-header-slider">
             <div class="p-header-slider__item p-header-slider__item1"
@@ -67,7 +68,7 @@ $theme_uri = get_template_directory_uri();
                                     class="p-hover-effect--type2">
                                     <div class="p-article05__img">
                                         <img width="300" height=""
-                                            src="<?php echo esc_url($theme_uri); ?>/photo/300.jpg?1905" />
+                                            src="<?php echo esc_url($theme_uri); ?>/photo/300.jpg?1905" alt="MOLREVE専用予約アプリ" />
                                     </div>
                                     <div class="p-article05__content">
                                         <h3 class="p-article05__title">モルレーヴ専用予約アプリが登場！【限定クーポン】で簡単即時予約が可能です。</h3>
@@ -79,7 +80,7 @@ $theme_uri = get_template_directory_uri();
                                 <a href="<?php echo esc_url(home_url('/design/')); ?>" class="p-hover-effect--type2">
                                     <div class="p-article05__img">
                                         <img width="300" height=""
-                                            src="<?php echo esc_url($theme_uri); ?>/photo/301.jpg?1905" />
+                                            src="<?php echo esc_url($theme_uri); ?>/photo/301.jpg?1905" alt="ラッシュデザイン・スタイル一覧" />
                                     </div>
                                     <div class="p-article05__content">
                                         <h3 class="p-article05__title">当店のラッシュデザイン・スタイルはこちらからチェック。お好みのスタイルを見つけてください。
@@ -101,7 +102,7 @@ $theme_uri = get_template_directory_uri();
                         <p class="p-index-content__header-desc">細部まで徹底したモルレーヴのこだわりをご堪能ください。</p>
                     </header>
 
-                    <img src="<?php echo esc_url($theme_uri); ?>/photo/400.png" width="100%">
+                    <img src="<?php echo esc_url($theme_uri); ?>/photo/400.png" width="100%" alt="MOLREVE店内写真">
 
                 </section>
 

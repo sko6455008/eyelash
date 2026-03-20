@@ -90,7 +90,7 @@ $theme_uri = get_template_directory_uri();
                 <div class="tcd-pb-row-inner clearfix">
                   <div class="tcd-pb-col col1">
                     <div class="tcd-pb-widget widget1 pb-widget-image">
-                      <img width="365" height="*" src="<?php echo esc_url($theme_uri); ?>/photo/001.jpg" />
+                      <img width="365" height="*" src="<?php echo esc_url($theme_uri); ?>/photo/001.jpg" alt="MOLREVE店舗外観" />
                     </div>
                   </div>
                   <div class="tcd-pb-col col2">

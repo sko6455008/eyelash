@@ -65,12 +65,12 @@ $theme_uri = get_template_directory_uri();
                 <div class="tcd-pb-row-inner clearfix">
                   <div class="tcd-pb-col col1">
                     <div class="tcd-pb-widget widget1 pb-widget-image"><img width="365" height="*"
-                        src="<?php echo esc_url($theme_uri); ?>/photo/001.jpg" />
+                        src="<?php echo esc_url($theme_uri); ?>/photo/001.jpg" alt="MOLREVE店舗外観" />
                     </div>
                   </div>
                   <div class="tcd-pb-col col2">
                     <div class="tcd-pb-widget widget1 pb-widget-editor">
-                      <p><img src="https://eyelash.jp/logo_01.png"><BR><span class="b">受付</span><br />電話：050-5305-3300　(
+                      <p><img src="https://eyelash.jp/logo_01.png" alt="MOLREVEロゴ"><BR><span class="b">受付</span><br />電話：050-5305-3300　(
                         9:00 〜 22:00 )　<br />メール：info@eyelash.jp<br /><span
                           class="b">営業時間</span><br />月曜日～土曜日　　11:00～22:00<br />日曜日・祝日　　　10:00～21:00<br /></p>
                     </div>

@@ -50,19 +50,19 @@ $theme_uri = get_template_directory_uri();
                     <div class="tcd-pb-widget widget1 pb-widget-editor">
                       <h3 class="pb_headline pb_font_family_type3">VOLUME LASH<span>ボリュームラッシュについて</span></h3>
                       <p class="mb0">
-                        <img src="<?php echo esc_url($theme_uri); ?>/design/page-vol01.jpg">
+                        <img src="<?php echo esc_url($theme_uri); ?>/design/page-vol01.jpg" alt="ボリュームラッシュの仕上がりイメージ">
                       </p>
                     </div>
                     <div class="tcd-pb-widget widget2 pb-widget-editor">
                       <h4>3Dボリュームラッシュでふわふわまつ毛に 毛量が気になる方も、自然にボリュームアップ</h4>
                       <p> ボリュームラッシュであれば自まつ毛の本数×2以上のエクステを装着できることから、ボリュームへの悩みをダイレクトに解決。<br>
                         <BR>
-                        <img src="<?php echo esc_url($theme_uri); ?>/design/page-vol02.jpg">
+                        <img src="<?php echo esc_url($theme_uri); ?>/design/page-vol02.jpg" alt="ボリュームラッシュの特徴説明">
                         <br><br>
                         2016年からどんどん人気に火がついている「ボリュームラッシュ」は、束タイプのエクステのこと。「ボリュームラッシュ」以外にも、3Dレイヤーや3Dラッシュ、ロシアンボリュームラッシュなどとも呼ばれる。<BR>ボリュームラッシュは2〜6本ほどの極細のマツエクを扇状に広げた束にし、1本の自まつ毛に装着する技術が採用されています。<BR>従来束タイプのエクステは1本のエクステを比べると重さがある分取れやすかったものが、1本の太さが0.05〜0.07mmと超極細であるボリュームラッシュはその悩みが解決されているのです
                       </p>
                       <h3 class="pb_headline pb_font_family_type3">VOLUME LASH style<span>ボリュームラッシュシリーズの種類</span></h3>
-                      <p><br><img src="<?php echo esc_url($theme_uri); ?>/design/page-vol03.jpg"><BR><BR></p>
+                      <p><br><img src="<?php echo esc_url($theme_uri); ?>/design/page-vol03.jpg" alt="ボリュームラッシュシリーズの種類一覧"><BR><BR></p>
                     </div>
                   </div>
                 </div>

@@ -51,7 +51,7 @@ $theme_uri = get_template_directory_uri();
                       <h3 class="pb_headline pb_font_family_type2">ご来店前について</h3>
                     </div>
                     <div class="tcd-pb-widget widget2 pb-widget-image">
-                      <img width="770" height="240" src="<?php echo esc_url($theme_uri); ?>/faq/02.jpg" />
+                      <img width="770" height="240" src="<?php echo esc_url($theme_uri); ?>/faq/02.jpg" alt="ご来店前のよくある質問" />
                     </div>
                     <p><BR><strong>◆ アイラッシュとは？</strong><BR>専用の接着剤を使い、自まつ毛に1本1本つけていきます。<BR><strong>◆
                         自まつ毛が少なくても平気？</strong><BR>自まつ毛の生えていないところに接着することはできませんが、少なくとも片目約60本くらいは生えていますので、接着は可能です。<BR><strong>◆
@@ -84,7 +84,7 @@ $theme_uri = get_template_directory_uri();
                     <h3 class="pb_headline pb_font_family_type2">ご来店後</h3>
                   </div>
                   <div class="tcd-pb-widget widget2 pb-widget-image">
-                    <img width="770" height="240" src="<?php echo esc_url($theme_uri); ?>/faq/01.jpg?213" />
+                    <img width="770" height="240" src="<?php echo esc_url($theme_uri); ?>/faq/01.jpg?213" alt="ご来店後のよくある質問" />
                   </div>
                   <div class="tcd-pb-widget widget4 pb-widget-editor">
                     <p><BR><strong>◆

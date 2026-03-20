@@ -49,14 +49,14 @@ $theme_uri = get_template_directory_uri();
                   <div class="tcd-pb-col col1">
                     <div class="tcd-pb-widget widget1 pb-widget-editor">
                       <h3 class="pb_headline pb_font_family_type3">FLAT LASH-series<span>フラットラッシュについて</span></h3>
-                      <p class="mb0"><img src="<?php echo esc_url($theme_uri); ?>/design/page-flatrash01.jpg"></p>
+                      <p class="mb0"><img src="<?php echo esc_url($theme_uri); ?>/design/page-flatrash01.jpg" alt="フラットラッシュの仕上がりイメージ"></p>
                     </div>
                     <div class="tcd-pb-widget widget2 pb-widget-editor">
                       <h4>従来のエクステに比べ、圧倒的な軽さと持続力を実現</h4>
                       <p>
                         最近のマツエク業界でブームとなっている「フラットラッシュ」は、「とにかく付け心地が軽い！」「仕上がりがナチュラル！」と、SNSでも見かけることの多い話題のアイテム。<BR>「フラットラッシュ」は…<BR>・仕上がりも付け心地も、ふわふわでとにかく軽い<BR>・自まつ毛への負担が少ないので、まつ毛が弱い方でも安心<BR>・フラットな形状で接着面積が広く、密着度が増すためモチがいい<BR>・自まつ毛にフィットするのでしっかり装着でき、安定感があって倒れにくい<BR>とメリットに溢れています。<BR><BR>
                       <h3 class="pb_headline pb_font_family_type3">choice point<span>選ばれるポイント</span></h3>
-                      <p class="mb0"><img src="<?php echo esc_url($theme_uri); ?>/design/page-flatrash02.jpg"><BR><BR>
+                      <p class="mb0"><img src="<?php echo esc_url($theme_uri); ?>/design/page-flatrash02.jpg" alt="フラットラッシュが選ばれるポイント"><BR><BR>
                       </p>
                       <h3 class="pb_headline pb_font_family_type3">Recommended<span>こんな方へおすすめ</span></h3>
                       <table width="100%">

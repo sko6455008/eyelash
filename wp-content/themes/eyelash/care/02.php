@@ -50,7 +50,7 @@ $theme_uri = get_template_directory_uri();
                     <div class="tcd-pb-widget widget1 pb-widget-headline">
                       <h3 class="pb_headline pb_font_family_type2">ホームケア</h3>
                     </div>
-                    <img width="100%" height="*" src="<?php echo esc_url($theme_uri); ?>/care/homecare0.png?137" />
+                    <img width="100%" height="*" src="<?php echo esc_url($theme_uri); ?>/care/homecare0.png?137" alt="まつエクのホームケアガイド" />
                   </div>
                 </div>
               </div>
@@ -73,7 +73,7 @@ $theme_uri = get_template_directory_uri();
                   </div>
                   <div class="tcd-pb-col col2">
                     <div class="tcd-pb-widget widget1 pb-widget-editor">
-                      <img width="365" height="*" src="<?php echo esc_url($theme_uri); ?>/care/homecare1.jpg" />
+                      <img width="365" height="*" src="<?php echo esc_url($theme_uri); ?>/care/homecare1.jpg" alt="施術後の注意事項イメージ" />
                     </div>
                   </div>
                 </div>
@@ -97,7 +97,7 @@ $theme_uri = get_template_directory_uri();
                   </div>
                   <div class="tcd-pb-col col2">
                     <div class="tcd-pb-widget widget1 pb-widget-editor">
-                      <img width="365" height="*" src="<?php echo esc_url($theme_uri); ?>/care/homecare2.jpg?1004" />
+                      <img width="365" height="*" src="<?php echo esc_url($theme_uri); ?>/care/homecare2.jpg?1004" alt="メイク時のまつエクケア方法" />
                     </div>
                   </div>
                 </div>
@@ -120,7 +120,7 @@ $theme_uri = get_template_directory_uri();
                   </div>
                   <div class="tcd-pb-col col2">
                     <div class="tcd-pb-widget widget1 pb-widget-editor">
-                      <img width="365" height="*" src="<?php echo esc_url($theme_uri); ?>/care/homecare3.jpg" />
+                      <img width="365" height="*" src="<?php echo esc_url($theme_uri); ?>/care/homecare3.jpg" alt="エクステが外れそうな場合の対処法" />
                     </div>
                   </div>
                 </div>
@@ -171,7 +171,7 @@ $theme_uri = get_template_directory_uri();
                   </div>
                   <div class="tcd-pb-col col2">
                     <div class="tcd-pb-widget widget1 pb-widget-editor">
-                      <img width="365" height="*" src="<?php echo esc_url($theme_uri); ?>/care/homecare4.jpg?1004" />
+                      <img width="365" height="*" src="<?php echo esc_url($theme_uri); ?>/care/homecare4.jpg?1004" alt="洗顔時のまつエクお手入れ方法" />
                     </div>
                   </div>
                 </div>

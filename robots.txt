@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+
+Disallow: /wp-includes/
+Disallow: /wp-content/plugins/
+Disallow: /wp-content/cache/
+Disallow: /wp-content/uploads/wpcf7_uploads/
+Disallow: /*?s=
+Disallow: /*?p=
+Disallow: /trackback/
+
+Sitemap: https://eyelash.jp/sitemap_index.xml
+Sitemap: https://eyelash.jp/wp-sitemap.xml

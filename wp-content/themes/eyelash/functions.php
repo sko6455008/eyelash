@@ -100,6 +100,271 @@ add_action('wp_enqueue_scripts', 'eyelash_enqueue_scripts');
 
 
 /**
+ * カスタムリライトルールページのタイトルをWordPress標準のtitle-tagに反映
+ * Yoast SEOはこのフィルターを経由してタイトルを出力する
+ */
+function eyelash_custom_page_title($title)
+{
+    $eyelash_page = get_query_var('eyelash_page');
+    if ($eyelash_page) {
+        $seo_meta = eyelash_get_seo_meta();
+        return $seo_meta['title'];
+    }
+    return $title;
+}
+add_filter('pre_get_document_title', 'eyelash_custom_page_title', 20);
+add_filter('wpseo_title', 'eyelash_custom_page_title', 20);
+
+/**
+ * カスタムリライトルールページのmeta descriptionをYoastに反映
+ */
+function eyelash_custom_page_metadesc($description)
+{
+    $eyelash_page = get_query_var('eyelash_page');
+    if ($eyelash_page) {
+        $seo_meta = eyelash_get_seo_meta();
+        return $seo_meta['description'];
+    }
+    return $description;
+}
+add_filter('wpseo_metadesc', 'eyelash_custom_page_metadesc', 20);
+
+/**
+ * カスタムリライトルールページのOGPをYoastに反映
+ */
+function eyelash_custom_page_og_title($title)
+{
+    $eyelash_page = get_query_var('eyelash_page');
+    if ($eyelash_page) {
+        $seo_meta = eyelash_get_seo_meta();
+        return $seo_meta['title'];
+    }
+    return $title;
+}
+add_filter('wpseo_opengraph_title', 'eyelash_custom_page_og_title', 20);
+
+function eyelash_custom_page_og_desc($description)
+{
+    $eyelash_page = get_query_var('eyelash_page');
+    if ($eyelash_page) {
+        $seo_meta = eyelash_get_seo_meta();
+        return $seo_meta['description'];
+    }
+    return $description;
+}
+add_filter('wpseo_opengraph_desc', 'eyelash_custom_page_og_desc', 20);
+
+function eyelash_custom_page_og_type($type)
+{
+    if (is_front_page()) {
+        return 'website';
+    }
+    $eyelash_page = get_query_var('eyelash_page');
+    if ($eyelash_page) {
+        return 'article';
+    }
+    return $type;
+}
+add_filter('wpseo_opengraph_type', 'eyelash_custom_page_og_type', 20);
+
+/**
+ * ページごとのSEOメタ情報を取得
+ */
+function eyelash_get_seo_meta()
+{
+    $site_name = 'MOLREVE（モルレーヴ）';
+    $eyelash_page = get_query_var('eyelash_page');
+    $default_description = '池袋駅西口3分のまつげエクステ・マツエクサロンMOLREVE（モルレーヴ）。美容所登録サロンで最高級セーブル、フラットラッシュ、ボリュームラッシュ、まつ毛パーマ、アイブロウをご提供。';
+
+    // フロントページ
+    if (is_front_page()) {
+        return array(
+            'title' => '池袋マツエク・まつげエクステサロン MOLREVE（モルレーヴ）| 池袋駅西口3分',
+            'description' => $default_description,
+            'og_type' => 'website',
+            'og_url' => home_url('/'),
+        );
+    }
+
+    // ブログ個別記事
+    if (is_singular('post')) {
+        $post_title = get_the_title();
+        return array(
+            'title' => $post_title . ' | ' . $site_name . ' ブログ',
+            'description' => wp_trim_words(get_the_excerpt(), 80, '...'),
+            'og_type' => 'article',
+            'og_url' => get_permalink(),
+        );
+    }
+
+    // カスタムページごとのメタ情報
+    $page_meta = array(
+        'info' => array(
+            'title' => 'サロン情報・インフォメーション | 池袋マツエクサロン ' . $site_name,
+            'description' => '池袋MOLREVEのサロン情報。オーダーメイドデザインで理想のお目元に。最高級商材使用、5日間お直し無料。池袋駅西口3分の美容所登録サロン。',
+        ),
+        'design' => array(
+            'title' => 'まつげエクステ デザイン一覧 | 池袋マツエクサロン ' . $site_name,
+            'description' => '池袋MOLREVEのまつげエクステデザイン。Lカール、ボリュームラッシュ、フラットラッシュ、セーブル、まつ毛パーマ、アイブロウなど豊富なスタイルをご提案。',
+        ),
+        'menu' => array(
+            'title' => 'メニュー・料金表 | 池袋マツエクサロン ' . $site_name,
+            'description' => '池袋MOLREVEのマツエクメニュー・料金一覧。最高級セーブル5,480円〜、フラットラッシュ7,480円〜、ボリュームラッシュ7,980円〜。まつ毛パーマ・アイブロウも。',
+        ),
+        'faq' => array(
+            'title' => 'よくある質問（FAQ） | 池袋マツエクサロン ' . $site_name,
+            'description' => '池袋MOLREVEへのよくある質問。まつげエクステの持ち、施術時間、痛み、コンタクト、お化粧など初めての方の疑問にお答えします。',
+        ),
+        'access' => array(
+            'title' => 'アクセス・地図 | 池袋マツエクサロン ' . $site_name,
+            'description' => '池袋MOLREVEへのアクセス。池袋駅西口から徒歩3分。東京都豊島区池袋2-40-13 VORT I池袋ビル6F。月〜土11:00〜22:00、日祝10:00〜21:00。',
+        ),
+        'blog' => array(
+            'title' => 'ブログ | 池袋マツエクサロン ' . $site_name,
+            'description' => '池袋MOLREVEスタッフによるブログ。まつげエクステのお手入れ方法、最新デザイン、サロンの日常をお届けします。',
+        ),
+        'gallery' => array(
+            'title' => 'ギャラリー | 池袋マツエクサロン ' . $site_name,
+            'description' => '池袋MOLREVEの施術ギャラリー。実際のまつげエクステ・まつ毛パーマの仕上がりをご覧いただけます。',
+        ),
+        'gallery_category' => array(
+            'title' => 'ギャラリー | 池袋マツエクサロン ' . $site_name,
+            'description' => '池袋MOLREVEの施術ギャラリー。カテゴリー別にまつげエクステの仕上がりをご覧いただけます。',
+        ),
+        'gallery_subcategory' => array(
+            'title' => 'ギャラリー | 池袋マツエクサロン ' . $site_name,
+            'description' => '池袋MOLREVEの施術ギャラリー。カテゴリー別にまつげエクステの仕上がりをご覧いただけます。',
+        ),
+    );
+
+    if ($eyelash_page && isset($page_meta[$eyelash_page])) {
+        $meta = $page_meta[$eyelash_page];
+        return array(
+            'title' => $meta['title'],
+            'description' => $meta['description'],
+            'og_type' => 'article',
+            'og_url' => home_url($_SERVER['REQUEST_URI']),
+        );
+    }
+
+    // 404ページ
+    if (is_404()) {
+        return array(
+            'title' => 'ページが見つかりません | ' . $site_name,
+            'description' => $default_description,
+            'og_type' => 'website',
+            'og_url' => home_url('/'),
+        );
+    }
+
+    // デフォルト
+    return array(
+        'title' => wp_title('|', false, 'right') . $site_name,
+        'description' => $default_description,
+        'og_type' => 'article',
+        'og_url' => home_url($_SERVER['REQUEST_URI']),
+    );
+}
+
+/**
+ * 構造化データ（JSON-LD）を出力
+ */
+function eyelash_output_structured_data()
+{
+    $eyelash_page = get_query_var('eyelash_page');
+    $schemas = array();
+
+    // LocalBusiness（全ページ共通）
+    $local_business = array(
+        '@context' => 'https://schema.org',
+        '@type' => 'BeautySalon',
+        'name' => 'MOLREVE（モルレーヴ）',
+        'description' => '池袋駅西口3分のまつげエクステ・マツエクサロン。美容所登録サロンで最高級セーブル、フラットラッシュ、ボリュームラッシュ、まつ毛パーマ、アイブロウをご提供。',
+        'url' => 'https://eyelash.jp/',
+        'telephone' => '050-5305-3300',
+        'email' => 'info@eyelash.jp',
+        'image' => 'https://eyelash.jp/wp-content/uploads/2017/12/sp_slide1.jpg',
+        'address' => array(
+            '@type' => 'PostalAddress',
+            'streetAddress' => '池袋2-40-13 VORT I池袋ビル6F',
+            'addressLocality' => '豊島区',
+            'addressRegion' => '東京都',
+            'postalCode' => '170-0014',
+            'addressCountry' => 'JP',
+        ),
+        'geo' => array(
+            '@type' => 'GeoCoordinates',
+            'latitude' => '35.7333319',
+            'longitude' => '139.7089482',
+        ),
+        'openingHoursSpecification' => array(
+            array(
+                '@type' => 'OpeningHoursSpecification',
+                'dayOfWeek' => array('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'),
+                'opens' => '11:00',
+                'closes' => '22:00',
+            ),
+            array(
+                '@type' => 'OpeningHoursSpecification',
+                'dayOfWeek' => array('Sunday'),
+                'opens' => '10:00',
+                'closes' => '21:00',
+            ),
+        ),
+        'priceRange' => '¥3,300〜¥10,980',
+        'currenciesAccepted' => 'JPY',
+        'paymentAccepted' => 'Cash, Credit Card',
+        'areaServed' => array(
+            '@type' => 'City',
+            'name' => '豊島区',
+        ),
+        'sameAs' => array(
+            'https://www.instagram.com/molreve_eyelash/',
+        ),
+    );
+    $schemas[] = $local_business;
+
+    // FAQPage（FAQページのみ）
+    if ($eyelash_page === 'faq') {
+        $faq_items = array(
+            array('q' => 'アイラッシュとは？', 'a' => '専用の接着剤を使い、自まつ毛に1本1本つけていきます。'),
+            array('q' => '自まつ毛が少なくても平気？', 'a' => '自まつ毛の生えていないところに接着することはできませんが、少なくとも片目約60本くらいは生えていますので、接着は可能です。'),
+            array('q' => 'どのくらいの時間がかかるの？', 'a' => '施術するメニューの内容にもよりますが、初回カウンセリングを含めまして1時間30分〜2時間くらいです。'),
+            array('q' => 'どのくらいもちますか？', 'a' => 'アフターケアにもよりますが約3週間〜1ヶ月です。自まつげの周期とともにエクステンションも少しずつ抜け落ちていきます。'),
+            array('q' => '自まつ毛は痛みませんか？', 'a' => '多少の負担をかけることにはなりますが無理に引っ張ったりしなければ痛むことはありません。ビューラーやマスカラ、まつ毛パーマ等よりは負担が少ないです。'),
+            array('q' => 'コンタクトをつけていますが施術できますか？', 'a' => '施術中は目を閉じたままになりますので、ドライアイなど気になる場合ははずしていただくことをお勧めします。'),
+            array('q' => '初めてですが、何本くらいが良いのですか？', 'a' => '自然に仕上げたい場合は80本〜100本（両目）、アイライン効果が欲しい場合は100〜120本（両目）をおすすめしております。'),
+            array('q' => '洗顔や入浴など水に濡らすことは大丈夫？', 'a' => '施術後5〜6時間はアイラッシュを濡らさないように注意してください。オイルクレンジングはさけていただいてジェルタイプのものをオススメしています。'),
+        );
+
+        $faq_schema = array(
+            '@context' => 'https://schema.org',
+            '@type' => 'FAQPage',
+            'mainEntity' => array(),
+        );
+        foreach ($faq_items as $item) {
+            $faq_schema['mainEntity'][] = array(
+                '@type' => 'Question',
+                'name' => $item['q'],
+                'acceptedAnswer' => array(
+                    '@type' => 'Answer',
+                    'text' => $item['a'],
+                ),
+            );
+        }
+        $schemas[] = $faq_schema;
+    }
+
+    // JSON-LD出力
+    foreach ($schemas as $schema) {
+        echo '<script type="application/ld+json">' . "\n";
+        echo wp_json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+        echo "\n" . '</script>' . "\n";
+    }
+}
+add_action('wp_head', 'eyelash_output_structured_data');
+
+/**
  * テーマディレクトリURLを取得するヘルパー関数
  */
 function eyelash_get_theme_uri()
@@ -246,8 +511,7 @@ add_filter('template_include', 'eyelash_template_include');
  */
 add_action('after_switch_theme', 'eyelash_flush_rewrite_rules');
 
-// 一時的な強制反映処理（反映後は削除可能）
-flush_rewrite_rules();
+// flush_rewrite_rules() はパフォーマンスに影響するため、テーマ有効化時のみ実行（上記after_switch_theme）
 
 /**
  * フッターにスクリプトを追加
@@ -953,3 +1217,111 @@ function eyelash_gallery_column_style() {
     </style>';
 }
 add_action('admin_head', 'eyelash_gallery_column_style');
+
+/**
+ * カスタムページをWordPress標準サイトマップに追加
+ *
+ * WordPress 5.5+の標準サイトマップ（/wp-sitemap.xml）に
+ * カスタムリライトルールで作成したページを含める
+ */
+function eyelash_register_sitemap_provider()
+{
+    $wp_sitemaps = wp_sitemaps_get_server();
+    if ($wp_sitemaps) {
+        $wp_sitemaps->registry->add_provider('eyelash-pages', new Eyelash_Sitemap_Provider());
+    }
+}
+add_action('init', 'eyelash_register_sitemap_provider', 30);
+
+/**
+ * カスタムページ用サイトマッププロバイダー
+ */
+class Eyelash_Sitemap_Provider extends WP_Sitemaps_Provider
+{
+    public function __construct()
+    {
+        $this->name        = 'eyelash-pages';
+        $this->object_type = 'eyelash-page';
+    }
+
+    /**
+     * サイトマップエントリを取得
+     */
+    public function get_url_list($page_num, $object_subtype = '')
+    {
+        if ($page_num > 1) {
+            return array();
+        }
+
+        $site_url = home_url();
+        $theme_path = get_template_directory();
+
+        // 固定ページ一覧
+        $static_pages = array(
+            array('url' => '/',         'priority' => '1.0', 'changefreq' => 'weekly'),
+            array('url' => '/info/',    'priority' => '0.8', 'changefreq' => 'monthly'),
+            array('url' => '/design/',  'priority' => '0.8', 'changefreq' => 'monthly'),
+            array('url' => '/menu/',    'priority' => '0.9', 'changefreq' => 'monthly'),
+            array('url' => '/faq/',     'priority' => '0.7', 'changefreq' => 'monthly'),
+            array('url' => '/access/',  'priority' => '0.8', 'changefreq' => 'monthly'),
+            array('url' => '/blog/',    'priority' => '0.7', 'changefreq' => 'daily'),
+            array('url' => '/gallery/', 'priority' => '0.7', 'changefreq' => 'weekly'),
+        );
+
+        // デザイン個別ページ
+        for ($i = 1; $i <= 8; $i++) {
+            $file = $theme_path . '/design/' . sprintf('%02d', $i) . '.php';
+            if (file_exists($file)) {
+                $static_pages[] = array(
+                    'url' => '/design/' . sprintf('%02d', $i) . '.php',
+                    'priority' => '0.6',
+                    'changefreq' => 'monthly',
+                );
+            }
+        }
+
+        // ケア個別ページ
+        for ($i = 1; $i <= 2; $i++) {
+            $file = $theme_path . '/care/' . sprintf('%02d', $i) . '.php';
+            if (file_exists($file)) {
+                $static_pages[] = array(
+                    'url' => '/care/' . sprintf('%02d', $i) . '.php',
+                    'priority' => '0.6',
+                    'changefreq' => 'monthly',
+                );
+            }
+        }
+
+        // ギャラリーカテゴリーページ
+        $gallery_cats = get_terms(array(
+            'taxonomy' => 'gallery_main_category',
+            'hide_empty' => false,
+        ));
+        if (!is_wp_error($gallery_cats)) {
+            foreach ($gallery_cats as $cat) {
+                $static_pages[] = array(
+                    'url' => '/gallery/' . $cat->slug . '/',
+                    'priority' => '0.6',
+                    'changefreq' => 'weekly',
+                );
+            }
+        }
+
+        $url_list = array();
+        foreach ($static_pages as $page) {
+            $url_list[] = array(
+                'loc' => $site_url . $page['url'],
+            );
+        }
+
+        return $url_list;
+    }
+
+    /**
+     * サイトマップの最大ページ数
+     */
+    public function get_max_num_pages($object_subtype = '')
+    {
+        return 1;
+    }
+}

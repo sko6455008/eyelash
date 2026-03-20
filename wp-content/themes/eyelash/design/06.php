@@ -50,7 +50,7 @@ $theme_uri = get_template_directory_uri();
                     <div class="tcd-pb-widget widget1 pb-widget-editor">
                       <h3 class="pb_headline pb_font_family_type3">Eyebrow<span>アイブロウについて</span></h3>
                       <p class="mb0">
-                        <img src="<?php echo esc_url($theme_uri); ?>/design/page-eyebrow01.jpg">
+                        <img src="<?php echo esc_url($theme_uri); ?>/design/page-eyebrow01.jpg" alt="アイブロウデザインの仕上がりイメージ">
                       </p>
                     </div>
                     <div class="tcd-pb-widget widget2 pb-widget-editor">
@@ -66,7 +66,7 @@ $theme_uri = get_template_directory_uri();
                   <div class="tcd-pb-col col1">
                     <div class="tcd-pb-widget widget1 pb-widget-editor">
                       <h3 class="pb_headline pb_font_family_type3">Eyebrow<span>アイブロウスタイリング</span></h3>
-                      <p class="mb0"><img src="<?php echo esc_url($theme_uri); ?>/menu/05.jpg" /></p>
+                      <p class="mb0"><img src="<?php echo esc_url($theme_uri); ?>/menu/05.jpg" alt="アイブロウスタイリングの施術イメージ" /></p>
                     </div>
                     <div class="tcd-pb-widget widget2 pb-widget-editor">
                       <p>「ノーメイクでも美しい」を実感!美眉<em>スタイリング</em>。描かなくてもいいような自眉をいかした似合うカタチの提案や、描く場合のコツなどのアドバイスも</p>
