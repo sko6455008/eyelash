@@ -154,7 +154,7 @@
                     </li>
                     <li id="menu-item-1560"
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1560">
-                        <a href="https://eyelist.work/" target="_blank">Recruit<span class="sub-title">リクルート</span><span
+                        <a href="<?php echo esc_url(home_url('/recruit/')); ?>">Recruit<span class="sub-title">リクルート</span><span
                                 class="sub-menu-toggle"></span></a>
                     </li>
                     <li id="menu-item-1563"

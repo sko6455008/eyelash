@@ -70,7 +70,7 @@ $theme_uri = get_template_directory_uri();
                   </div>
                   <div class="tcd-pb-col col2">
                     <div class="tcd-pb-widget widget1 pb-widget-editor">
-                      <p><img src="https://eyelash.jp/logo_01.png" alt="MOLREVEロゴ"><BR><span class="b">受付</span><br />電話：050-5305-3300　(
+                      <p><img src="<?php echo esc_url($theme_uri); ?>/logo_01.png" alt="MOLREVEロゴ"><BR><span class="b">受付</span><br />電話：050-5305-3300　(
                         9:00 〜 22:00 )　<br />メール：info@eyelash.jp<br /><span
                           class="b">営業時間</span><br />月曜日～土曜日　　11:00～22:00<br />日曜日・祝日　　　10:00～21:00<br /></p>
                     </div>

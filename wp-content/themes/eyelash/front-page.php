@@ -31,18 +31,15 @@ $theme_uri = get_template_directory_uri();
                 <ul id="js-news-ticker__list" class="p-news-ticker__list">
                     <li class="p-news-ticker__list-item">
                         <time class="p-news-ticker__list-item-date" datetime="2017-12-26">2026.02.01</time>
-                        <a href="https://eyelist.work/" class="p-news-ticker__list-item-title"
-                            target="_blank">わたしたちと一緒に働きませんか？楽しい仲間を随時募集しております。</a>
+                        <a href="<?php echo esc_url(home_url('/recruit/')); ?>" class="p-news-ticker__list-item-title">わたしたちと一緒に働きませんか？楽しい仲間を随時募集しております。</a>
                     </li>
                     <li class="p-news-ticker__list-item">
                         <time class="p-news-ticker__list-item-date" datetime="2017-12-26">2026.02.01</time>
-                        <a href="https://eyelist.work/" class="p-news-ticker__list-item-title"
-                            target="_blank">わたしたちと一緒に働きませんか？楽しい仲間を随時募集しております。</a>
+                        <a href="<?php echo esc_url(home_url('/recruit/')); ?>" class="p-news-ticker__list-item-title">わたしたちと一緒に働きませんか？楽しい仲間を随時募集しております。</a>
                     </li>
                     <li class="p-news-ticker__list-item">
                         <time class="p-news-ticker__list-item-date" datetime="2017-12-26">2026.02.01</time>
-                        <a href="https://eyelist.work/" class="p-news-ticker__list-item-title"
-                            target="_blank">わたしたちと一緒に働きませんか？楽しい仲間を随時募集しております。</a>
+                        <a href="<?php echo esc_url(home_url('/recruit/')); ?>" class="p-news-ticker__list-item-title">わたしたちと一緒に働きませんか？楽しい仲間を随時募集しております。</a>
                     </li>
                 </ul>
                 <a id="js-news-ticker__btn" href="#" class="p-news-ticker__btn p-btn">詳細を見る</a>

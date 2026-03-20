@@ -35,7 +35,7 @@
         <BR><BR>
         <a href="<?php echo esc_url(home_url('/care/02.php')); ?>"><img
                 src="<?php echo esc_url(get_template_directory_uri()); ?>/photo/bana_care.png" width="100%" alt="ホームケアのご案内"></a><br><br>
-        <a href="https://eyelist.work/"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/photo/bana_rec.png"
+        <a href="<?php echo esc_url(home_url('/recruit/')); ?>"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/photo/bana_rec.png"
                 width="100%" alt="スタッフ募集・リクルート"></a><BR><BR>
         <img src="<?php echo esc_url(get_template_directory_uri()); ?>/photo/bana_hosho.png" width="100%" alt="施術保証のご案内">
     </div>

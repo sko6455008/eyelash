@@ -235,6 +235,10 @@ function eyelash_get_seo_meta()
             'title' => 'ギャラリー | 池袋マツエクサロン ' . $site_name,
             'description' => '池袋MOLREVEの施術ギャラリー。カテゴリー別にまつげエクステの仕上がりをご覧いただけます。',
         ),
+        'recruit' => array(
+            'title' => 'アイリスト募集・リクルート | 池袋マツエクサロン ' . $site_name,
+            'description' => '池袋西口MOLREVE（モルレーヴ）アイラッシュサロンでアイリスト・店長候補を募集中。経験者大歓迎、実務経験1年未満の方もOK。',
+        ),
     );
 
     if ($eyelash_page && isset($page_meta[$eyelash_page])) {
@@ -431,6 +435,8 @@ function eyelash_rewrite_rules()
     add_rewrite_rule('^faq/?$', 'index.php?eyelash_page=faq', 'top');
     add_rewrite_rule('^info/?$', 'index.php?eyelash_page=info', 'top');
 
+    add_rewrite_rule('^recruit/?$', 'index.php?eyelash_page=recruit', 'top');
+
     // ブログ一覧ページ
     add_rewrite_rule('^blog/?$', 'index.php?eyelash_page=blog', 'top');
     add_rewrite_rule('^blog/page/([0-9]+)/?$', 'index.php?eyelash_page=blog&paged=$matches[1]', 'top');
@@ -475,6 +481,9 @@ function eyelash_template_include($template)
             case 'care':
                 $care_id = get_query_var('care_id');
                 $file = $theme_path . '/care/' . sprintf('%02d', $care_id) . '.php';
+                break;
+            case 'recruit':
+                $file = $theme_path . '/recruit/index.php';
                 break;
             case 'blog':
                 // ブログ一覧用のクエリを設定

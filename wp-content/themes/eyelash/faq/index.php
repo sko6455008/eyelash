@@ -18,7 +18,7 @@ $theme_uri = get_template_directory_uri();
       </a>
       <meta itemprop="position" content="1">
     </li>
-    <li class="p-breadcrumb__item c-breadcrumb__item">Frequently Asked Question</li>
+    <li class="p-breadcrumb__item c-breadcrumb__item">FAQ(よくあるご質問)</li>
   </ul>
   <header class="p-page-header" style="background: #b7aa9d;">
     <div class="p-page-header__inner l-inner">
@@ -37,7 +37,7 @@ $theme_uri = get_template_directory_uri();
         </a>
         <meta itemprop="position" content="1">
       </li>
-      <li class="p-breadcrumb__item c-breadcrumb__item">Frequently Asked Question</li>
+      <li class="p-breadcrumb__item c-breadcrumb__item">FAQ(よくあるご質問)</li>
     </ul>
     <div class="l-contents">
       <div class="l-primary">

@@ -26,7 +26,7 @@
                 <a href="<?php echo esc_url(home_url('/faq/')); ?>">FAQ<span class="sub-title"></span></a>
             </li>
             <li id="menu-item-1565" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1565">
-                <a href="https://eyelist.work/" target="_blank">リクルート<span class="sub-title"></span></a>
+                <a href="<?php echo esc_url(home_url('/recruit/')); ?>">リクルート<span class="sub-title"></span></a>
             </li>
             <li id="menu-item-1564" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1564">
                 <a href="<?php echo esc_url(home_url('/access/')); ?>">アクセス<span class="sub-title"></span></a>
