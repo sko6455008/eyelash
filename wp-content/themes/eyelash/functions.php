@@ -271,6 +271,58 @@ function eyelash_get_seo_meta()
 }
 
 /**
+ * canonicalタグを出力
+ */
+function eyelash_output_canonical()
+{
+    $eyelash_page = get_query_var('eyelash_page');
+    $canonical_url = '';
+
+    if (is_front_page()) {
+        $canonical_url = home_url('/');
+    } elseif (is_singular()) {
+        $canonical_url = get_permalink();
+    } elseif ($eyelash_page) {
+        // カスタムリライトルールのページ
+        $path = '/' . $eyelash_page . '/';
+
+        // デザイン個別ページ
+        $design_id = get_query_var('design_id');
+        if ($eyelash_page === 'design' && $design_id) {
+            $path = '/design/' . sprintf('%02d', $design_id) . '/';
+        }
+
+        // ギャラリーカテゴリページ
+        $gallery_main_cat = get_query_var('gallery_main_cat');
+        $gallery_sub_cat = get_query_var('gallery_sub_cat');
+        if ($eyelash_page === 'gallery_category' && $gallery_main_cat) {
+            $path = '/gallery/' . $gallery_main_cat . '/';
+        } elseif ($eyelash_page === 'gallery_subcategory' && $gallery_main_cat && $gallery_sub_cat) {
+            $path = '/gallery/' . $gallery_main_cat . '/' . $gallery_sub_cat . '/';
+        } elseif ($eyelash_page === 'gallery') {
+            $path = '/gallery/';
+        }
+
+        // ブログページネーション
+        if ($eyelash_page === 'blog') {
+            $paged = get_query_var('paged');
+            $path = $paged > 1 ? '/blog/page/' . $paged . '/' : '/blog/';
+        }
+
+        $canonical_url = home_url($path);
+    } elseif (is_category() || is_tag() || is_tax()) {
+        $canonical_url = get_term_link(get_queried_object());
+    } elseif (is_archive()) {
+        $canonical_url = get_post_type_archive_link(get_post_type());
+    }
+
+    if ($canonical_url && !is_wp_error($canonical_url)) {
+        echo '<link rel="canonical" href="' . esc_url($canonical_url) . '" />' . "\n";
+    }
+}
+add_action('wp_head', 'eyelash_output_canonical', 1);
+
+/**
  * 構造化データ（JSON-LD）を出力
  */
 function eyelash_output_structured_data()

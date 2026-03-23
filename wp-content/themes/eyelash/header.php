@@ -3,8 +3,33 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="https://eyelash.jp/wp-content/uploads/2017/12/favicon.png">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GT-W6KQ9LMN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-W0YLM11CLS');
+
+      // 「WEB予約する」ボタンのクリックイベントを計測
+      document.addEventListener('DOMContentLoaded', function() {
+          document.querySelectorAll('a[href*="b-merit.jp"]').forEach(function(link) {
+              link.addEventListener('click', function() {
+                  gtag('event', 'click_reservation', {
+                      'event_category': 'conversion',
+                      'event_label': 'web_reservation_button',
+                      'link_url': this.href,
+                      'link_location': this.closest('.l-header') ? 'header' :
+                                       this.closest('.p-global-nav') ? 'mobile_nav' : 'other'
+                  });
+              });
+          });
+      });
+    </script>
+
     <?php wp_head(); ?>
     <?php
     /**

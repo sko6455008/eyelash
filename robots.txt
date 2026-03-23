@@ -12,5 +12,4 @@ Disallow: /*?s=
 Disallow: /*?p=
 Disallow: /trackback/
 
-Sitemap: https://eyelash.jp/sitemap_index.xml
 Sitemap: https://eyelash.jp/wp-sitemap.xml

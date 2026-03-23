@@ -962,7 +962,6 @@ body {
 
 .p-blog-single__thumbnail {
    width: 100%;
-   max-height: 400px;
    overflow: hidden;
 }
 
@@ -970,7 +969,6 @@ body {
    width: 100%;
    height: auto;
    object-fit: cover;  
-   aspect-ratio: 3/2;
 }
 
 .p-blog-single__header {

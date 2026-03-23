@@ -49,7 +49,7 @@ $theme_uri = get_template_directory_uri();
                   <div class="tcd-pb-col col1">
                     <div class="tcd-pb-widget widget1 pb-widget-editor">
                       <h3 class="pb_headline pb_font_family_type3">Premier Sable<span>最高級プレミアセーブル （カラーも同額)</span></h3>
-                      <p class="mb0"><img src="<?php echo esc_url($theme_uri); ?>/menu/02.jpg" alt="最高級プレミアセーブル" /></p>
+                      <p class="mb0"><img src="<?php echo esc_url($theme_uri); ?>/menu/02.jpg" alt="池袋マツエク 最高級プレミアセーブル仕上がりイメージ｜MOLREVE" /></p>
                     </div>
                     <div class="tcd-pb-widget widget2 pb-widget-editor">
                       <p>まるで地まつげのように軽いプレミアムセーブル。柔らかくて負担が最小限、自然なボリュームのセーブルです。<br> カラーも同額です。</p>
@@ -106,7 +106,7 @@ $theme_uri = get_template_directory_uri();
                   <div class="tcd-pb-col col1">
                     <div class="tcd-pb-widget widget1 pb-widget-editor">
                       <h3 class="pb_headline pb_font_family_type3">Platinum Sable<span>最高級プラチナセーブル </span></h3>
-                      <p class="mb0"><img src="<?php echo esc_url($theme_uri); ?>/menu/01.jpg" alt="最高級プラチナセーブル" /></p>
+                      <p class="mb0"><img src="<?php echo esc_url($theme_uri); ?>/menu/01.jpg" alt="池袋マツエク 最高級プラチナセーブル仕上がりイメージ｜MOLREVE" /></p>
                     </div>
                     <div class="tcd-pb-widget widget2 pb-widget-editor">
                       <p>しなやかで本物のまつげに近い最高級プラチナセーブル。<br>地まつ⽑に近い⾃然な⿊⾊と上品な艶感、しっとりとした手触りで、これまでにない弾力と美しくナチュラルな仕上がりをキープできます。
@@ -164,7 +164,7 @@ $theme_uri = get_template_directory_uri();
                   <div class="tcd-pb-col col1">
                     <div class="tcd-pb-widget widget1 pb-widget-editor">
                       <h3 class="pb_headline pb_font_family_type3">Llat Rush<span>フラットラッシュ</span></h3>
-                      <p class="mb0"><img src="<?php echo esc_url($theme_uri); ?>/menu/03.jpg?0248" alt="フラットラッシュ" /></p>
+                      <p class="mb0"><img src="<?php echo esc_url($theme_uri); ?>/menu/03.jpg?0248" alt="池袋マツエク フラットラッシュ仕上がりイメージ｜MOLREVE" /></p>
                     </div>
                     <div class="tcd-pb-widget widget2 pb-widget-editor">
                       <p>自まつ毛への負担が少ないので、まつ毛が弱い方でも安心、フラットな形状で接着面積が広く、密着度が増すためモチがよく、フワフワで軽くつけ心地が抜群です。</p>
@@ -216,7 +216,7 @@ $theme_uri = get_template_directory_uri();
                   <div class="tcd-pb-col col1">
                     <div class="tcd-pb-widget widget1 pb-widget-editor">
                       <h3 class="pb_headline pb_font_family_type3">Volume Rush<span>ボリュームラッシュ</span></h3>
-                      <p class="mb0"><img src="<?php echo esc_url($theme_uri); ?>/menu/04.jpg" alt="ボリュームラッシュ" /></p>
+                      <p class="mb0"><img src="<?php echo esc_url($theme_uri); ?>/menu/04.jpg" alt="池袋マツエク ボリュームラッシュ仕上がりイメージ｜MOLREVE" /></p>
                     </div>
                     <div class="tcd-pb-widget widget2 pb-widget-editor">
                       <p>従来のシングルラッシュや、ナチュラルに目元を盛ることのできるフラットラッシュに対して、ボリュームラッシュはつけまつげのようなバサバサとした印象になります。</p>
@@ -263,7 +263,7 @@ $theme_uri = get_template_directory_uri();
                   <div class="tcd-pb-col col1">
                     <div class="tcd-pb-widget widget1 pb-widget-editor">
                       <h3 class="pb_headline pb_font_family_type3">Eyebrow<span>アイブロウスタイリング</span></h3>
-                      <p class="mb0"><img src="<?php echo esc_url($theme_uri); ?>/menu/05.jpg" alt="アイブロウスタイリング" /></p>
+                      <p class="mb0"><img src="<?php echo esc_url($theme_uri); ?>/menu/05.jpg" alt="池袋 アイブロウスタイリング施術イメージ｜MOLREVE" /></p>
                     </div>
                     <div class="tcd-pb-widget widget2 pb-widget-editor">
                       <p>「ノーメイクでも美しい」を実感!美眉<em>スタイリング</em>。描かなくてもいいような自眉をいかした似合うカタチの提案や、描く場合のコツなどのアドバイスも</p>
@@ -290,7 +290,7 @@ $theme_uri = get_template_directory_uri();
                   <div class="tcd-pb-col col1">
                     <div class="tcd-pb-widget widget1 pb-widget-editor">
                       <h3 class="pb_headline pb_font_family_type3">OFF<span>オフ</span></h3>
-                      <p class="mb0"><img src="<?php echo esc_url($theme_uri); ?>/menu/06.jpg" alt="エクステオフ" /></p>
+                      <p class="mb0"><img src="<?php echo esc_url($theme_uri); ?>/menu/06.jpg" alt="まつげエクステ オフ施術｜池袋MOLREVE" /></p>
                     </div>
                     <div class="tcd-pb-widget widget2 pb-widget-editor">
                       <p>自まつ毛をいたわり、しっかりオフをいたします。</p>
@@ -317,7 +317,7 @@ $theme_uri = get_template_directory_uri();
                   <div class="tcd-pb-col col1">
                     <div class="tcd-pb-widget widget1 pb-widget-editor">
                       <h3 class="pb_headline pb_font_family_type3">Treatment<span>ラッシュリフト</span></h3>
-                      <p class="mb0"><img src="<?php echo esc_url($theme_uri); ?>/menu/07.jpg" alt="ラッシュリフト・まつ毛パーマ" /></p>
+                      <p class="mb0"><img src="<?php echo esc_url($theme_uri); ?>/menu/07.jpg" alt="池袋 ラッシュリフト・まつ毛パーマ仕上がりイメージ｜MOLREVE" /></p>
                     </div>
                     <div class="tcd-pb-widget widget2 pb-widget-editor">
                       <p>当店の技法は、従来のまつ毛パーマと違い、まつ毛を根元から立ちちあげ、目元の印象をアップさせるといった方法です。<br> 自まつ毛とは思えないほどに、マツゲを長く見せます<span
