@@ -1204,7 +1204,7 @@ body {
 .p-gallery-item__thumbnail img {
    width: 100%;
    height: auto;
-   aspect-ratio: 1 / 1;
+   aspect-ratio: 4/3;
    object-fit: cover;
    transition: transform 0.3s;
 }

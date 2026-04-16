@@ -75,7 +75,7 @@ $gallery_query = new WP_Query(array(
     </ul>
     <header class="p-page-header" style="background: #b7aa9d;">
         <div class="p-page-header__inner l-inner">
-            <h1 class="p-page-header__title" style="background: #000000; color: #ffffff; font-size: 27px;">
+            <h1 class="p-page-header__title" style="background: #000000; color: #ffffff; font-size: 27px; padding: 10px !important; text-align: center !important;">
                 <?php echo esc_html(ucfirst($sub_cat_slug)); ?><span class="p-page-header__sub"
                     style="color: #ffffff; font-size: 12px;"><?php echo esc_html($sub_category_name); ?></span>
             </h1>
