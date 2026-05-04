@@ -15,13 +15,6 @@ if ($main_categories && !is_wp_error($main_categories)) {
     $main_cat_slug = $main_categories[0]->slug;
     $main_cat_name = $main_categories[0]->name;
 }
-
-// サブカテゴリーを取得
-$sub_categories = get_the_terms(get_the_ID(), 'gallery_subcategory');
-$sub_cat_name = '';
-if ($sub_categories && !is_wp_error($sub_categories)) {
-    $sub_cat_name = $sub_categories[0]->name;
-}
 ?>
 
 <main class="l-main">
@@ -76,11 +69,6 @@ if ($sub_categories && !is_wp_error($sub_categories)) {
                             <?php if ($main_cat_name): ?>
                                 <span class="p-gallery-single__category">
                                     <?php echo esc_html($main_cat_name); ?>
-                                </span>
-                            <?php endif; ?>
-                            <?php if ($sub_cat_name): ?>
-                                <span class="p-gallery-single__subcategory">
-                                    <?php echo esc_html($sub_cat_name); ?>
                                 </span>
                             <?php endif; ?>
                             <span class="p-gallery-single__staff">

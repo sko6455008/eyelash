@@ -1400,8 +1400,7 @@ body {
    margin-bottom: 20px;
 }
 
-.p-gallery-single__category,
-.p-gallery-single__subcategory {
+.p-gallery-single__category {
    display: inline-block;
    padding: 4px 12px;
    background: #111111;
@@ -1409,10 +1408,6 @@ body {
    font-size: 11px;
    border-radius: 3px;
    margin-right: 8px;
-}
-
-.p-gallery-single__subcategory {
-   background: #666;
 }
 
 .p-gallery-single__staff {

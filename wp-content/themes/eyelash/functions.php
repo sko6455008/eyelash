@@ -231,10 +231,6 @@ function eyelash_get_seo_meta()
             'title' => 'ギャラリー | 池袋マツエクサロン ' . $site_name,
             'description' => '池袋MOLREVEの施術ギャラリー。カテゴリー別にまつげエクステの仕上がりをご覧いただけます。',
         ),
-        'gallery_subcategory' => array(
-            'title' => 'ギャラリー | 池袋マツエクサロン ' . $site_name,
-            'description' => '池袋MOLREVEの施術ギャラリー。カテゴリー別にまつげエクステの仕上がりをご覧いただけます。',
-        ),
         'recruit' => array(
             'title' => 'アイリスト募集・リクルート | 池袋マツエクサロン ' . $site_name,
             'description' => '池袋西口MOLREVE（モルレーヴ）アイラッシュサロンでアイリスト・店長候補を募集中。経験者大歓迎、実務経験1年未満の方もOK。',
@@ -294,11 +290,8 @@ function eyelash_output_canonical()
 
         // ギャラリーカテゴリページ
         $gallery_main_cat = get_query_var('gallery_main_cat');
-        $gallery_sub_cat = get_query_var('gallery_sub_cat');
         if ($eyelash_page === 'gallery_category' && $gallery_main_cat) {
             $path = '/gallery/' . $gallery_main_cat . '/';
-        } elseif ($eyelash_page === 'gallery_subcategory' && $gallery_main_cat && $gallery_sub_cat) {
-            $path = '/gallery/' . $gallery_main_cat . '/' . $gallery_sub_cat . '/';
         } elseif ($eyelash_page === 'gallery') {
             $path = '/gallery/';
         }
@@ -721,101 +714,12 @@ function eyelash_register_gallery_post_type()
         'meta_box_cb' => false, // デフォルトメタボックスを非表示
     ));
 
-    // サブカテゴリー（カスタムメタボックスを使用するためデフォルトUIを非表示）
-    register_taxonomy('gallery_subcategory', 'gallery', array(
-        'labels' => array(
-            'name' => 'サブカテゴリー',
-            'singular_name' => 'サブカテゴリー',
-            'add_new_item' => 'サブカテゴリーを追加',
-            'new_item_name' => '新しいサブカテゴリー名',
-            'edit_item' => 'サブカテゴリーを編集',
-            'update_item' => 'サブカテゴリーを更新',
-            'all_items' => 'すべてのサブカテゴリー',
-            'search_items' => 'サブカテゴリーを検索',
-            'menu_name' => 'サブカテゴリー',
-        ),
-        'hierarchical' => true,
-        'public' => true,
-        'rewrite' => false,
-        'show_admin_column' => true,
-        'show_in_rest' => true,
-        'meta_box_cb' => false, // デフォルトメタボックスを非表示
-    ));
 }
 add_action('init', 'eyelash_register_gallery_post_type');
 
 /**
- * サブカテゴリーに親メインカテゴリーのメタフィールドを追加
- */
-function eyelash_add_subcategory_fields($taxonomy)
-{
-    $main_categories = get_terms(array(
-        'taxonomy' => 'gallery_main_category',
-        'hide_empty' => false,
-    ));
-    ?>
-    <div class="form-field form-required">
-        <label for="parent_main_category">親メインカテゴリー <span class="description">(必須)</span></label>
-        <select name="parent_main_category" id="parent_main_category" required>
-            <option value="">-- 選択してください --</option>
-            <?php if (!is_wp_error($main_categories) && !empty($main_categories)): ?>
-                <?php foreach ($main_categories as $cat): ?>
-                    <option value="<?php echo esc_attr($cat->slug); ?>"><?php echo esc_html($cat->name); ?></option>
-                <?php endforeach; ?>
-            <?php endif; ?>
-        </select>
-        <p>このサブカテゴリーが属するメインカテゴリーを選択してください。</p>
-    </div>
-    <?php
-}
-add_action('gallery_subcategory_add_form_fields', 'eyelash_add_subcategory_fields');
-
-/**
- * サブカテゴリー編集画面に親メインカテゴリーフィールドを追加
- */
-function eyelash_edit_subcategory_fields($term)
-{
-    $parent_main_category = get_term_meta($term->term_id, 'parent_main_category', true);
-    $main_categories = get_terms(array(
-        'taxonomy' => 'gallery_main_category',
-        'hide_empty' => false,
-    ));
-    ?>
-    <tr class="form-field form-required">
-        <th scope="row"><label for="parent_main_category">親メインカテゴリー <span class="description">(必須)</span></label></th>
-        <td>
-            <select name="parent_main_category" id="parent_main_category" required>
-                <option value="">-- 選択してください --</option>
-                <?php if (!is_wp_error($main_categories) && !empty($main_categories)): ?>
-                    <?php foreach ($main_categories as $cat): ?>
-                        <option value="<?php echo esc_attr($cat->slug); ?>" <?php selected($parent_main_category, $cat->slug); ?>>
-                            <?php echo esc_html($cat->name); ?>
-                        </option>
-                    <?php endforeach; ?>
-                <?php endif; ?>
-            </select>
-            <p class="description">このサブカテゴリーが属するメインカテゴリーを選択してください。</p>
-        </td>
-    </tr>
-    <?php
-}
-add_action('gallery_subcategory_edit_form_fields', 'eyelash_edit_subcategory_fields');
-
-/**
- * サブカテゴリーのメタフィールドを保存
- */
-function eyelash_save_subcategory_fields($term_id)
-{
-    if (isset($_POST['parent_main_category'])) {
-        update_term_meta($term_id, 'parent_main_category', sanitize_text_field($_POST['parent_main_category']));
-    }
-}
-add_action('created_gallery_subcategory', 'eyelash_save_subcategory_fields');
-add_action('edited_gallery_subcategory', 'eyelash_save_subcategory_fields');
-
-/**
  * ギャラリー用のリライトルールを追加
- * URL構造: /gallery/, /gallery/{main-slug}/, /gallery/{main-slug}/{sub-slug}/
+ * URL構造: /gallery/, /gallery/{main-slug}/
  */
 function eyelash_gallery_rewrite_rules()
 {
@@ -826,10 +730,6 @@ function eyelash_gallery_rewrite_rules()
     // メインカテゴリーページ（/gallery/{main-category-slug}/）
     add_rewrite_rule('^gallery/([^/]+)/?$', 'index.php?eyelash_page=gallery_category&gallery_main_cat=$matches[1]', 'top');
     add_rewrite_rule('^gallery/([^/]+)/page/([0-9]+)/?$', 'index.php?eyelash_page=gallery_category&gallery_main_cat=$matches[1]&paged=$matches[2]', 'top');
-
-    // サブカテゴリーページ（/gallery/{main-category-slug}/{sub-category-slug}/）
-    add_rewrite_rule('^gallery/([^/]+)/([^/]+)/?$', 'index.php?eyelash_page=gallery_subcategory&gallery_main_cat=$matches[1]&gallery_sub_cat=$matches[2]', 'top');
-    add_rewrite_rule('^gallery/([^/]+)/([^/]+)/page/([0-9]+)/?$', 'index.php?eyelash_page=gallery_subcategory&gallery_main_cat=$matches[1]&gallery_sub_cat=$matches[2]&paged=$matches[3]', 'top');
 }
 add_action('init', 'eyelash_gallery_rewrite_rules', 20);
 
@@ -852,30 +752,9 @@ add_action('delete_term', 'eyelash_flush_rewrite_on_category_change', 10, 3);
 function eyelash_gallery_query_vars($vars)
 {
     $vars[] = 'gallery_main_cat';
-    $vars[] = 'gallery_sub_cat';
     return $vars;
 }
 add_filter('query_vars', 'eyelash_gallery_query_vars');
-
-/**
- * 特定のメインカテゴリーに属するサブカテゴリーを取得
- */
-function eyelash_get_subcategories_by_main($main_category_slug)
-{
-    $subcategories = get_terms(array(
-        'taxonomy' => 'gallery_subcategory',
-        'hide_empty' => false,
-        'meta_query' => array(
-            array(
-                'key' => 'parent_main_category',
-                'value' => $main_category_slug,
-                'compare' => '=',
-            ),
-        ),
-    ));
-
-    return !is_wp_error($subcategories) ? $subcategories : array();
-}
 
 /**
  * すべてのメインカテゴリーを取得
@@ -920,21 +799,6 @@ function eyelash_gallery_template_include($template)
         }
     }
 
-    if ($eyelash_page === 'gallery_subcategory') {
-        // メインカテゴリーとサブカテゴリーが存在するか確認
-        $main_cat_slug = get_query_var('gallery_main_cat');
-        $sub_cat_slug = get_query_var('gallery_sub_cat');
-        $main_category = get_term_by('slug', $main_cat_slug, 'gallery_main_category');
-        $sub_category = get_term_by('slug', $sub_cat_slug, 'gallery_subcategory');
-
-        if ($main_category && $sub_category) {
-            global $wp_query;
-            $wp_query->is_404 = false;
-            status_header(200);
-            return $theme_path . '/gallery/subcategory.php';
-        }
-    }
-
     return $template;
 }
 add_filter('template_include', 'eyelash_gallery_template_include', 5);
@@ -966,9 +830,6 @@ function eyelash_gallery_metabox_callback($post)
     $current_main_cats = wp_get_post_terms($post->ID, 'gallery_main_category', array('fields' => 'ids'));
     $current_main_cat_id = !empty($current_main_cats) ? $current_main_cats[0] : 0;
 
-    $current_sub_cats = wp_get_post_terms($post->ID, 'gallery_subcategory', array('fields' => 'ids'));
-    $current_sub_cat_id = !empty($current_sub_cats) ? $current_sub_cats[0] : 0;
-
     // メインカテゴリー一覧を取得
     $main_categories = get_terms(array(
         'taxonomy' => 'gallery_main_category',
@@ -976,24 +837,6 @@ function eyelash_gallery_metabox_callback($post)
         'orderby' => 'name',
         'order' => 'ASC',
     ));
-
-    // サブカテゴリー一覧を取得（親カテゴリー情報付き）
-    $sub_categories = get_terms(array(
-        'taxonomy' => 'gallery_subcategory',
-        'hide_empty' => false,
-        'orderby' => 'name',
-        'order' => 'ASC',
-    ));
-
-    // サブカテゴリーの親情報をJSON形式で準備
-    $sub_cat_data = array();
-    foreach ($sub_categories as $sub_cat) {
-        $parent_main = get_term_meta($sub_cat->term_id, 'parent_main_category', true);
-        $sub_cat_data[$sub_cat->term_id] = array(
-            'name' => $sub_cat->name,
-            'parent_main' => $parent_main,
-        );
-    }
     ?>
     <style>
         .gallery-metabox-section {
@@ -1014,12 +857,6 @@ function eyelash_gallery_metabox_callback($post)
             color: #d63638;
             margin-left: 4px;
         }
-        .gallery-metabox-note {
-            font-size: 12px;
-            color: #666;
-            margin-top: 5px;
-            font-weight: normal;
-        }
         .gallery-category-list {
             margin: 0;
             padding: 0;
@@ -1036,14 +873,7 @@ function eyelash_gallery_metabox_callback($post)
         .gallery-category-list input[type="radio"] {
             margin-right: 8px;
         }
-        #gallery-subcategory-list {
-            max-height: 200px;
-            overflow-y: auto;
-            border: 1px solid #ddd;
-            padding: 10px;
-            background: #fafafa;
-        }
-        .no-subcategories {
+        .no-categories {
             color: #666;
             font-style: italic;
         }
@@ -1058,8 +888,8 @@ function eyelash_gallery_metabox_callback($post)
                 <?php foreach ($main_categories as $cat): ?>
                     <li>
                         <label>
-                            <input type="radio" 
-                                   name="gallery_main_category" 
+                            <input type="radio"
+                                   name="gallery_main_category"
                                    value="<?php echo esc_attr($cat->term_id); ?>"
                                    data-slug="<?php echo esc_attr($cat->slug); ?>"
                                    <?php checked($current_main_cat_id, $cat->term_id); ?>>
@@ -1069,64 +899,9 @@ function eyelash_gallery_metabox_callback($post)
                 <?php endforeach; ?>
             </ul>
         <?php else: ?>
-            <p class="no-subcategories">メインカテゴリーが登録されていません。<a href="<?php echo admin_url('edit-tags.php?taxonomy=gallery_main_category&post_type=gallery'); ?>">メインカテゴリーを追加</a></p>
+            <p class="no-categories">メインカテゴリーが登録されていません。<a href="<?php echo admin_url('edit-tags.php?taxonomy=gallery_main_category&post_type=gallery'); ?>">メインカテゴリーを追加</a></p>
         <?php endif; ?>
     </div>
-
-    <div class="gallery-metabox-section">
-        <label class="gallery-metabox-label">
-            サブカテゴリー
-            <span class="gallery-metabox-note">※ギャラリーに紐づいているサブカテゴリーを削除した場合、Guestギャラリーページの「一覧」にだけ表示されます。</span>
-        </label>
-        <div id="gallery-subcategory-list">
-            <?php if (!empty($sub_categories) && !is_wp_error($sub_categories)): ?>
-                <ul class="gallery-category-list">
-                    <?php foreach ($sub_categories as $sub_cat): 
-                        $parent_main = get_term_meta($sub_cat->term_id, 'parent_main_category', true);
-                        // 現在のメインカテゴリーに紐づくサブカテゴリーのみ表示（初期状態）
-                        $current_main_slug = '';
-                        if ($current_main_cat_id) {
-                            $current_main_term = get_term($current_main_cat_id, 'gallery_main_category');
-                            if ($current_main_term && !is_wp_error($current_main_term)) {
-                                $current_main_slug = $current_main_term->slug;
-                            }
-                        }
-                        $display = ($parent_main === $current_main_slug) ? '' : 'display:none;';
-                    ?>
-                        <li class="subcategory-item" data-parent="<?php echo esc_attr($parent_main); ?>" style="<?php echo $display; ?>">
-                            <label>
-                                <input type="radio" 
-                                       name="gallery_subcategory" 
-                                       value="<?php echo esc_attr($sub_cat->term_id); ?>"
-                                       <?php checked($current_sub_cat_id, $sub_cat->term_id); ?>>
-                                <?php echo esc_html($sub_cat->name); ?>
-                            </label>
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
-            <?php else: ?>
-                <p class="no-subcategories">サブカテゴリーが登録されていません。<a href="<?php echo admin_url('edit-tags.php?taxonomy=gallery_subcategory&post_type=gallery'); ?>">サブカテゴリーを追加</a></p>
-            <?php endif; ?>
-        </div>
-    </div>
-
-    <script>
-    jQuery(document).ready(function($) {
-        // メインカテゴリー変更時にサブカテゴリーをフィルタリング
-        $('input[name="gallery_main_category"]').on('change', function() {
-            var selectedSlug = $(this).data('slug');
-            
-            // すべてのサブカテゴリーを非表示
-            $('.subcategory-item').hide();
-            
-            // 選択したメインカテゴリーに紐づくサブカテゴリーのみ表示
-            $('.subcategory-item[data-parent="' + selectedSlug + '"]').show();
-            
-            // サブカテゴリーの選択をリセット
-            $('input[name="gallery_subcategory"]').prop('checked', false);
-        });
-    });
-    </script>
     <?php
 }
 
@@ -1158,14 +933,6 @@ function eyelash_save_gallery_metabox($post_id)
     } else {
         wp_set_post_terms($post_id, array(), 'gallery_main_category');
     }
-
-    // サブカテゴリーを保存
-    if (isset($_POST['gallery_subcategory'])) {
-        $sub_cat_id = intval($_POST['gallery_subcategory']);
-        wp_set_post_terms($post_id, array($sub_cat_id), 'gallery_subcategory');
-    } else {
-        wp_set_post_terms($post_id, array(), 'gallery_subcategory');
-    }
 }
 add_action('save_post_gallery', 'eyelash_save_gallery_metabox');
 
@@ -1176,17 +943,9 @@ add_action('save_post_gallery', 'eyelash_save_gallery_metabox');
 function eyelash_hide_gallery_category_fields()
 {
     echo '<style>
-        /* メインカテゴリー・サブカテゴリーのリスト画面と編集画面で適用 */
-        
-        /* メインカテゴリー */
+        /* メインカテゴリーのリスト画面と編集画面で適用 */
         body.taxonomy-gallery_main_category .term-description-wrap,
         body.taxonomy-gallery_main_category .term-parent-wrap {
-            display: none;
-        }
-
-        /* サブカテゴリー */
-        body.taxonomy-gallery_subcategory .term-description-wrap,
-        body.taxonomy-gallery_subcategory .term-parent-wrap {
             display: none;
         }
     </style>';
@@ -1197,7 +956,7 @@ add_action('admin_head', 'eyelash_hide_gallery_category_fields');
  */
 function eyelash_require_gallery_category_name_slug() {
     $screen = get_current_screen();
-    if ($screen && in_array($screen->taxonomy, array('gallery_main_category', 'gallery_subcategory'), true)) {
+    if ($screen && $screen->taxonomy === 'gallery_main_category') {
         ?>
         <script>
             jQuery(document).ready(function($) {
@@ -1213,45 +972,6 @@ function eyelash_require_gallery_category_name_slug() {
     }
 }
 add_action('admin_footer', 'eyelash_require_gallery_category_name_slug');
-
-/**
- * サブカテゴリー一覧に「親メインカテゴリー」カラムを追加
- */
-function eyelash_gallery_subcategory_columns($columns) {
-    // 親メインカテゴリーをスラグの後ろに追加
-    $new_columns = array();
-    foreach ($columns as $key => $value) {
-        $new_columns[$key] = $value;
-        if ($key === 'slug') {
-            $new_columns['parent_main_category'] = '親メインカテゴリー';
-        }
-    }
-    return $new_columns;
-}
-add_filter('manage_edit-gallery_subcategory_columns', 'eyelash_gallery_subcategory_columns');
-
-/**
- * サブカテゴリー一覧のカラム内容を表示
- */
-function eyelash_gallery_subcategory_custom_column($content, $column_name, $term_id) {
-    if ($column_name === 'parent_main_category') {
-        $parent_main_cat_slug = get_term_meta($term_id, 'parent_main_category', true);
-        if ($parent_main_cat_slug) {
-            $parent_main_cat = get_term_by('slug', $parent_main_cat_slug, 'gallery_main_category');
-            if ($parent_main_cat) {
-                // 親カテゴリーの編集画面へのリンクを作成
-                $edit_link = get_edit_term_link($parent_main_cat->term_id, 'gallery_main_category');
-                $content = '<a href="' . esc_url($edit_link) . '">' . esc_html($parent_main_cat->name) . '</a>';
-            } else {
-                $content = esc_html($parent_main_cat_slug . ' (削除済み)');
-            }
-        } else {
-            $content = '-';
-        }
-    }
-    return $content;
-}
-add_filter('manage_gallery_subcategory_custom_column', 'eyelash_gallery_subcategory_custom_column', 10, 3);
 
 /**
  * ギャラリー一覧にアイキャッチ画像を表示
